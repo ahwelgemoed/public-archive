@@ -9,22 +9,60 @@
         <title>For The Lovely Young</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
         <link href="https://fonts.googleapis.com/css?family=Chelsea+Market|Oswald:400,600" rel="stylesheet">
         <link rel="stylesheet" href="css/main.css">
        
     </head>
     <body>
+            <audio id="Jonk" autoplay loop>
+            <source src="video/Jonk.mp3" type="audio/mpeg">
+            </audio>
             <video poster="#" id="bgvid" playsinline autoplay muted loop>
-                    <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+
                 <source src="video/sea.mp4" type="video/mp4">
               </video>
-        <div id="redbox">
-           <h1 id="open">The lovely young taken to the UNSEA</h1>
-        </div>  
-       
-        <a href="#"><img class="dogicon" src="img/dogicon.svg" alt=""></a>
+            <div id="redbox1">
+                <h1 id="open1">and for the lovely young taken to the sea for the first time</h1>
+            </div>
+            <div id="redbox2">
+                    <h1 id="open2">and for the unlovely unyoung taken to the sea for the last time</h1>
+            </div>
+            <div id="redbox3">
+                    <h1 id="open3">and for the unlovely young untaken to the sea</h1>
+            </div>         
+            <div id="redbox4">
+                    <h1 id="open4">and for the lovely young taken to the unsea</h1>
+            </div>                 
+        <a class="" href="#"><img class="dogicon" src="img/dogicon.svg" alt=""></a>
+    
+    <div class="mapwrapper">
+            <div class="off1">Main Stage</div>
+            <div class="off2">James Stage</div>
+            <div class="off3">Food</div>
+            <div class=""></div>
+            <div class=""></div>
+            <span id="myVid"></span>
+
+
+                <div id="section-title" >
+                        <video id="stuff" preload="auto" onended="myAddListener()" autoplay controls width="480" height="360" title="">
+                        <source src="" type="video/mp4">
+                        </video>
+                    </div>
+
+
+
+
+
+    </div>
+
+
+
+
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="js/jquery.drawsvg.js"></script>
         <script src="js/anime.min.js"></script>
         <script src="js/main.js"></script>
 
