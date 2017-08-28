@@ -85,16 +85,38 @@ window.onload =  function build(){
 
     var video = document.getElementById('stuff');
     var source = document.createElement('source');
+    var audio = document.getElementById('Jonk')
 
 
     source.setAttribute('src', videos1);
     video.appendChild(source);
     video.play();
 
-    // document.getElementById('myVideo').addEventListener('ended',myHandler,false);
-    // function myHandler(e) {
-    //     // What you want to do after the event
-    // }
+  video.addEventListener("ended", function(){
+    
+
+  });
+
+
+
+
+    //     // Inputs Colour and Border//
+    //    for(var i = 0; i < video.length; i++)
+    //         {
+    //             var random = Math.floor(Math.random()* videos.length);
+    //             var videos1 = videos[random]; // Changes random selected value to corresponding name in index//
+
+            
+            
+    //             source.setAttribute('src', videos1);
+    //             video.appendChild(source);
+    //             video.play();
+           
+            // }
+
+
+
+            // });
     
 
 }
