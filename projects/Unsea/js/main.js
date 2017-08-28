@@ -1,21 +1,21 @@
 "use strict";
 
-setTimeout(function() {
-    $(document).ready(function(){
-        $("#redbox1").fadeIn(2000);
-        $("#open1").fadeIn(2000);
-        $("#redbox2").fadeIn(4000);
-        $("#open2").fadeIn(4000);
-        $("#redbox3").fadeIn(6000);
-        $("#open3").fadeIn(6000);
-        $("#redbox4").fadeIn(8000);
-        $("#open4").fadeIn(8000);
-            setTimeout(function() {
-                $(".dogicon").addClass("dogan");
-            }, 3000);
+// setTimeout(function() {
+//     $(document).ready(function(){
+//         $("#redbox1").fadeIn(2000);
+//         $("#open1").fadeIn(2000);
+//         $("#redbox2").fadeIn(4000);
+//         $("#open2").fadeIn(4000);
+//         $("#redbox3").fadeIn(6000);
+//         $("#open3").fadeIn(6000);
+//         $("#redbox4").fadeIn(8000);
+//         $("#open4").fadeIn(8000);
+//             setTimeout(function() {
+//                 $(".dogicon").addClass("dogan");
+//             }, 3000);
             
-    });
-}, 2000);
+//     });
+// }, 2000);
 
 $(".dogicon").click(function(){
     $("#redbox1").animate({opacity: '0'}
@@ -87,6 +87,7 @@ function shuffle(array)
 }
 
 var videos = [
+    "video/Sea.mp4",
     "video/1.mp4",
     "video/2.mp4",
     "video/3.mp4",
@@ -95,6 +96,39 @@ var videos = [
     "video/Fire_3.mp4",
     "video/Face_1.mp4",
     "video/Face_2.mp4",
+    "video/4.mp4",
+    "video/5.mp4",
+    "video/6.mp4",
+    "video/7.mp4",
+    "video/8.mp4",
+    "video/9.mp4",
+    "video/10.mp4",
+    "video/11.mp4",
+    "video/12.mp4",
+    "video/13.mp4",
+    "video/14.mp4",
+    "video/15.mp4",
+    "video/16.mp4",
+    "video/17.mp4",
+    "video/18.mp4",
+    "video/19.mp4",
+    "video/20.mp4",
+    "video/21.mp4",
+    "video/22.mp4",
+    "video/23.mp4",
+    "video/24.mp4",
+    "video/25.mp4",
+    "video/26.mp4",
+    "video/27.mp4",
+    "video/28.mp4",
+    "video/29.mp4",
+    "video/30.mp4",
+    "video/31.mp4",
+    "video/32.mp4",
+    "video/33.mp4",
+    "video/34.mp4",
+    "video/35.mp4",
+    "video/36.mp4",
 ];
 
 
@@ -113,6 +147,8 @@ shuffle(videos); // shuffles the array
         video.setAttribute('src', videos1);
 //      console.log(videos1);
         video.play();
+        videos.splice( random, 1 );
+        
 }
 video.addEventListener("ended", function(){
     
@@ -149,19 +185,28 @@ setTimeout(function() {
 }, 1000);
 
 });
+var aud = document.getElementById("Jonk");
 
+$("#Jonk").bind("timeupdate", function() {
+    var currentTime = parseInt(this.currentTime, 10);
+    if(currentTime == 193) { 
+            $(document).ready(function(){
+                $("#redbox1").fadeIn(2000);
+                $("#open1").fadeIn(2000);
+                $("#redbox2").fadeIn(10000);
+                $("#open2").fadeIn(10000);
+                setTimeout(function() {
 
-
-// video.addEventListener("progress", function() {
-//     // When buffer is 1 whole video is buffered
-//     if (Math.round(video.buffered.end(0)) / Math.round(video.seekable.end(0)) === 1) {
-//         build();
-//    }
-//   }, false);
-
-// var duration = video.duration
-// var current = video.currentTime
-
-
-
-
+                $("#redbox3").fadeIn(2000);
+                $("#open3").fadeIn(2000);
+                $("#redbox4").fadeIn(10000);
+                $("#open4").fadeIn(10000);
+            }, 10000);
+                    setTimeout(function() {
+                        $(".dogicon").addClass("dogan");
+                    }, 3000);
+                    
+            });
+        $(this).unbind("timeupdate");
+    }
+});
