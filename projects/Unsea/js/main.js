@@ -129,6 +129,25 @@ var videos = [
     "video/34.mp4",
     "video/35.mp4",
     "video/36.mp4",
+    "video/37.mp4",
+    "video/38.mp4",
+    "video/39.mp4",
+    "video/40.mp4",
+    "video/41.mp4",
+    "video/42.mp4",
+    "video/43.mp4",
+    "video/44.mp4",
+    "video/45.mp4",
+    "video/46.mp4",
+    "video/47.mp4",
+    "video/48.mp4",
+    "video/49.mp4",
+    "video/50.mp4",
+    "video/51.mp4",
+    "video/52.mp4",
+    "video/53.mp4",
+    "video/54.mp4",
+    "video/55.mp4",
 ];
 
 
@@ -147,7 +166,7 @@ shuffle(videos); // shuffles the array
         video.setAttribute('src', videos1);
 //      console.log(videos1);
         video.play();
-        videos.splice( random, 1 );
+        videos.splice( random, 1 ); //Removes Already Played Video from Array
         
 }
 video.addEventListener("ended", function(){
