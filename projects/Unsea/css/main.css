@@ -50,6 +50,9 @@ table {
 body{
     background: black;
 }
+.body{
+    background: white;
+}
 
 video { 
     position: fixed;
@@ -113,26 +116,27 @@ h1{
 }
 .dogicon{
     position: absolute;
-    height: 10%;
-    width: 10%;
-    left: 45%;
+    height: 20%;
+    width: 20%;
+    right: 5%;
     bottom: 5%;
     display: none;
 }
 .dogan{
     display: inline;
-    animation: dog 5s ease;
+    animation: dog 3s ease;
 }
 
 @keyframes dog {
     0%   { opacity: 0; 
             bottom: 0%}
-    100% { opacity: 1;
-            bottom: 10% }
+    100% { opacity: 0.8;
+            bottom: 5% }
   }
 
 .mapwrapper{
     position: relative;
+
 }
 .off1 , .off2, .off3{
     opacity: 0;
@@ -141,19 +145,28 @@ h1{
     position: absolute;
     width: 130px;
     height: 130px;
-    background: #d12429;
+    background: #020303;
     text-align: center;
     margin-left: 20%;
     margin-top: 2%;
     color: white;
     line-height: 130px;
     font-family: 'Oswald', sans-serif;
+
   }
+  .mainstagewidth{
+    width: 250px;
+    transition: all 2s;
+    background: #d12429;
+    
+
+  }
+
   .jamesstage{
     position: absolute;
     width: 100px;
     height: 100px;
-    background: #000000;
+
     text-align: center;
     margin-left: 80%;
     margin-top: 3%;
@@ -161,12 +174,18 @@ h1{
     line-height: 100px;
     font-family: 'Oswald', sans-serif;
     animation-delay: 0.3s;
+    background: #d12429;
+  }
+  .jameswidth{
+    width: 200px;
+    background: #020303;
+    transition: all 2s;
   }
   .food{    
     position: absolute;
     width: 50px;
     height: 100px;
-    background: #000000;
+    background: #F1E17E;
     text-align: center;
     margin-left: 50%;
     margin-top: 10%;

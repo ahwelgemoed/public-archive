@@ -1,22 +1,5 @@
 "use strict";
-
-// setTimeout(function() {
-//     $(document).ready(function(){
-//         $("#redbox1").fadeIn(2000);
-//         $("#open1").fadeIn(2000);
-//         $("#redbox2").fadeIn(4000);
-//         $("#open2").fadeIn(4000);
-//         $("#redbox3").fadeIn(6000);
-//         $("#open3").fadeIn(6000);
-//         $("#redbox4").fadeIn(8000);
-//         $("#open4").fadeIn(8000);
-//             setTimeout(function() {
-//                 $(".dogicon").addClass("dogan");
-//             }, 3000);
-            
-//     });
-// }, 2000);
-
+// Animate Out and Remove Divs on Click //
 $(".dogicon").click(function(){
     $("#redbox1").animate({opacity: '0'}
     );
@@ -28,7 +11,7 @@ $(".dogicon").click(function(){
     );
     $(".dogicon").animate({opacity: '0'}
     );
-    $("#bgvid").animate({opacity: '0'});
+    $("#stuff").animate({opacity: '0'});
     $( "audio" ).remove();
 
     setTimeout(function() {
@@ -37,42 +20,23 @@ $(".dogicon").click(function(){
         $( "#redbox3" ).remove();
         $( "#redbox4" ).remove();
         $( ".dogicon" ).remove();
-        $( "#bgvid" ).remove();
+        $( "#stuff" ).remove();
+// Animate In Map Icons //
         $(".off1").addClass("animated fadeInDown mainstage ")
         $(".off2").addClass("animated fadeInDown jamesstage")
         $(".off3").addClass("animated fadeInDown food")
+        $("body").addClass("body")
+setTimeout(function()
+{
+    $(".off1").addClass("mainstagewidth")
+    $(".off2").addClass("jameswidth")
+
+},500)
     
 
     }, 1000);
 }); 
-// window.onload =  function build(){
-//     var videos = [
-//     "video/sea.mp4",
-//     "video/1.mp4",
-//     "video/2.mp4",
-//     "video/3.mp4"
-// ];
-//     var random = Math.floor(Math.random()* videos.length);
-//     var videos1 = videos[random]; // Changes random selected value to corresponding name in index//
-//     var video = document.getElementById('stuff');
-//     var source = document.createElement('source');
-//     var audio = document.getElementById('Jonk')
 
-//     source.removeAttribute('src');
-//     source.setAttribute('src', videos1);
-//     video.appendChild(source);
-//     video.play();
-
-// video.addEventListener("ended", function(){
-//     build();
-//         // build(0,document.getElementById("video"),videos);
-//         source.setAttribute('src', videos1);
-//         video.play();
-
-    
-
-//   });
-// };
 function shuffle(array)
 {
   var m = array.length, t, i;
@@ -179,7 +143,7 @@ audio.addEventListener("ended", function(){
 
 $(".dogicon").animate({opacity: '0'}
 );
-$("#bgvid").animate({opacity: '0'});
+$("#stuff").animate({opacity: '0'});
 $( "audio" ).remove();
 
 setTimeout(function() {
@@ -188,10 +152,11 @@ setTimeout(function() {
     $( "#redbox3" ).remove();
     $( "#redbox4" ).remove();
     $( ".dogicon" ).remove();
-    $( "#bgvid" ).remove();
+    $( "#stuff" ).remove();
     $(".off1").addClass("animated fadeInDown mainstage ")
     $(".off2").addClass("animated fadeInDown jamesstage")
     $(".off3").addClass("animated fadeInDown food")
+    $("body").addClass("body")
 
 
 }, 1000);
