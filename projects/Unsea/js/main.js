@@ -157,14 +157,7 @@ video.addEventListener("ended", function(){
 window.onload = build();
  
 audio.addEventListener("ended", function(){
-    $("#redbox1").animate({opacity: '0'}
-);
-$("#redbox2").animate({opacity: '0'}
-);
-$("#redbox3").animate({opacity: '0'}
-);
-$("#redbox4").animate({opacity: '0'}
-);
+
 $(".dogicon").animate({opacity: '0'}
 );
 $("#bgvid").animate({opacity: '0'});
@@ -188,6 +181,9 @@ setTimeout(function() {
 var aud = document.getElementById("Jonk");
 
 $("#Jonk").bind("timeupdate", function() {
+    setTimeout(function() {
+        $(".dogicon").addClass("dogan");
+    }, 3000);
     var currentTime = parseInt(this.currentTime, 10);
     if(currentTime == 193) { 
             $(document).ready(function(){
@@ -199,14 +195,14 @@ $("#Jonk").bind("timeupdate", function() {
 
                 $("#redbox3").fadeIn(2000);
                 $("#open3").fadeIn(2000);
-                $("#redbox4").fadeIn(10000);
-                $("#open4").fadeIn(10000);
+                $("#redbox4").fadeIn(15000);
+                $("#open4").fadeIn(15000);
             }, 10000);
-                    setTimeout(function() {
-                        $(".dogicon").addClass("dogan");
-                    }, 3000);
+
                     
             });
+
+            
         $(this).unbind("timeupdate");
     }
 });
