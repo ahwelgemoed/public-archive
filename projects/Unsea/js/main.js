@@ -124,6 +124,7 @@ var videos = [
 ];
 
 
+
 var video = document.getElementById('stuff');
 var audio = document.getElementById('Jonk');
 var duration
