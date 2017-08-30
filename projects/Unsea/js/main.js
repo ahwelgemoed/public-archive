@@ -1,6 +1,12 @@
 "use strict";
-// Animate Out and Remove Divs on Click //
-$(".dogicon").click(function(){
+
+var aud = document.getElementById("Jonk");
+var clicks = 0;
+$('.dogicon').click(function() {
+    if (clicks == 0){
+
+           aud.currentTime=191.5;
+    } else {
     $("#redbox1").animate({opacity: '0'}
     );
     $("#redbox2").animate({opacity: '0'}
@@ -22,20 +28,23 @@ $(".dogicon").click(function(){
         $( ".dogicon" ).remove();
         $( "#stuff" ).remove();
 // Animate In Map Icons //
-        $(".off1").addClass("animated fadeInDown mainstage ")
-        $(".off2").addClass("animated fadeInDown jamesstage")
-        $(".off3").addClass("animated fadeInDown food")
-        $("body").addClass("body")
+        $(".off1").addClass("animated fadeInDown mainstage ");
+        $(".off2").addClass("animated fadeInDown jamesstage");
+        $(".off3").addClass("animated fadeInDown food");
+        $("body").addClass("body");
 setTimeout(function()
 {
-    $(".off1").addClass("mainstagewidth")
-    $(".off2").addClass("jameswidth")
-
-},500)
+    $(".off1").addClass("mainstagewidth");
+    $(".off2").addClass("jameswidth");
+    $(".off3").addClass("foodheight")
     
 
-    }, 1000);
-}); 
+},500)
+}, 1000);
+    }
+    ++clicks;
+  });
+
 
 function shuffle(array)
 {
@@ -153,12 +162,11 @@ setTimeout(function() {
     $( "#redbox4" ).remove();
     $( ".dogicon" ).remove();
     $( "#stuff" ).remove();
+    // Animation for "Menue" goes here //
     $(".off1").addClass("animated fadeInDown mainstage ")
     $(".off2").addClass("animated fadeInDown jamesstage")
     $(".off3").addClass("animated fadeInDown food")
     $("body").addClass("body")
-
-
 }, 1000);
 
 });
