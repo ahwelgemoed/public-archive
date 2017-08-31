@@ -1,53 +1,75 @@
 "use strict";
-// Animate Out and Remove Divs on Click //
-$(".dogicon").click(function(){
-    $("#redbox1").animate({opacity: '0'}
-    );
-    $("#redbox2").animate({opacity: '0'}
-    );
-    $("#redbox3").animate({opacity: '0'}
-    );
-    $("#redbox4").animate({opacity: '0'}
-    );
-    $(".dogicon").animate({opacity: '0'}
-    );
-    $("#stuff").animate({opacity: '0'});
-    $( "audio" ).remove();
 
-    setTimeout(function() {
-        $( "#redbox1" ).remove();
-        $( "#redbox2" ).remove();
-        $( "#redbox3" ).remove();
-        $( "#redbox4" ).remove();
-        $( ".dogicon" ).remove();
-        $( "#stuff" ).remove();
-// Animate In Map Icons //
-        $(".off1").addClass("animated fadeInDown mainstage ")
-        $(".off2").addClass("animated fadeInDown jamesstage")
-        $(".off3").addClass("animated fadeInDown food")
-        $("body").addClass("body")
-setTimeout(function()
-{
-    $(".off1").addClass("mainstagewidth")
-    $(".off2").addClass("jameswidth")
+$('.next').click(function () {
+    // $('.browsergif').addClass('animated fadeOut');
+    build();
+    audio.play();
+    $('.viewer').addClass('animated fadeOut');
 
-},500)
-    
+    setTimeout(function () {
+        // $('.browsergif').remove();
+        $(".viewer").remove();
+        // $(this).remove();
+    }, 2000)
 
-    }, 1000);
-}); 
+});
+// document.body.style.overflow = 'hidden';
 
-function shuffle(array)
-{
-  var m = array.length, t, i;
-  while (m > 0) 
-  {
-	i = Math.floor(Math.random() * m--);
-	t = array[m];
-	array[m] = array[i];
-	array[i] = t;
-  }
-  return array;
+var aud = document.getElementById("Jonk");
+var clicks = 0;
+$('.dogicon').click(function () {
+    if (clicks == 0) {
+
+        aud.currentTime = 191.5;
+    } else {
+        $("#redbox1").animate({
+            opacity: '0'
+        });
+        $("#redbox2").animate({
+            opacity: '0'
+        });
+        $("#redbox3").animate({
+            opacity: '0'
+        });
+        $("#redbox4").animate({
+            opacity: '0'
+        });
+        $(".dogicon").animate({
+            opacity: '0'
+        });
+        $("#stuff").animate({
+            opacity: '0'
+        });
+        $("audio").remove();
+
+        setTimeout(function () {
+            $("#redbox1").remove();
+            $("#redbox2").remove();
+            $("#redbox3").remove();
+            $("#redbox4").remove();
+            // $(".dogicon").remove();
+            $("#stuff").remove();
+            // Animate In Map Icons //
+
+            $("#lineup").addClass("animated fadeInDown lineup ");
+            $("#rules").addClass("animated fadeInDown rules");
+            $("#book").addClass("animated fadeInDown book");
+        }, 1000);
+    }
+    ++clicks;
+});
+
+
+function shuffle(array) {
+    var m = array.length,
+        t, i;
+    while (m > 0) {
+        i = Math.floor(Math.random() * m--);
+        t = array[m];
+        array[m] = array[i];
+        array[i] = t;
+    }
+    return array;
 }
 
 var videos = [
@@ -120,63 +142,66 @@ var video = document.getElementById('stuff');
 var audio = document.getElementById('Jonk');
 var duration
 var current
-function build(){
 
-shuffle(videos); // shuffles the array
+function build() {
 
-    var random = Math.floor(Math.random()* videos.length);
+    shuffle(videos); // shuffles the array
 
-        var videos1 = videos[random]; // Changes random selected value to corresponding name in index//
+    var random = Math.floor(Math.random() * videos.length);
 
-        video.setAttribute('src', videos1);
-//      console.log(videos1);
-        video.play();
-        videos.splice( random, 1 ); //Removes Already Played Video from Array
-        
+    var videos1 = videos[random]; // Changes random selected value to corresponding name in index//
+
+    video.setAttribute('src', videos1);
+    //      console.log(videos1);
+    video.play();
+    videos.splice(random, 1); //Removes Already Played Video from Array
+
 }
-video.addEventListener("ended", function(){
-    
+video.addEventListener("ended", function () {
+
     build();
 });
-window.onload = build();
- 
-audio.addEventListener("ended", function(){
-
-$(".dogicon").animate({opacity: '0'}
-);
-$("#stuff").animate({opacity: '0'});
-$( "audio" ).remove();
-
-setTimeout(function() {
-    $( "#redbox1" ).remove();
-    $( "#redbox2" ).remove();
-    $( "#redbox3" ).remove();
-    $( "#redbox4" ).remove();
-    $( ".dogicon" ).remove();
-    $( "#stuff" ).remove();
-    $(".off1").addClass("animated fadeInDown mainstage ")
-    $(".off2").addClass("animated fadeInDown jamesstage")
-    $(".off3").addClass("animated fadeInDown food")
-    $("body").addClass("body")
 
 
-}, 1000);
+audio.addEventListener("ended", function () {
+
+    $(".dogicon").animate({
+        opacity: '0'
+    });
+    $("#stuff").animate({
+        opacity: '0'
+    });
+    $("audio").remove();
+
+    setTimeout(function () {
+        $("#redbox1").remove();
+        $("#redbox2").remove();
+        $("#redbox3").remove();
+        $("#redbox4").remove();
+        $(".dogicon").remove();
+        $("#stuff").remove();
+        // Animation for "Menue" goes here //
+        $(".off1").addClass("animated fadeInDown mainstage ")
+        $(".off2").addClass("animated fadeInDown jamesstage")
+        $(".off3").addClass("animated fadeInDown food")
+        $("body").addClass("body")
+    }, 1000);
 
 });
 var aud = document.getElementById("Jonk");
 
-$("#Jonk").bind("timeupdate", function() {
-    setTimeout(function() {
+$("#Jonk").bind("timeupdate", function () {
+    setTimeout(function () {
         $(".dogicon").addClass("dogan");
     }, 3000);
     var currentTime = parseInt(this.currentTime, 10);
-    if(currentTime == 193) { 
-            $(document).ready(function(){
-                $("#redbox1").fadeIn(2000);
-                $("#open1").fadeIn(2000);
-                $("#redbox2").fadeIn(10000);
-                $("#open2").fadeIn(10000);
-                setTimeout(function() {
+    if (currentTime == 193) {
+        $(document).ready(function () {
+            $("#redbox1").fadeIn(2000);
+            $("#open1").fadeIn(2000);
+            $("#redbox2").fadeIn(10000);
+            $("#open2").fadeIn(10000);
+            setTimeout(function () {
 
                 $("#redbox3").fadeIn(2000);
                 $("#open3").fadeIn(2000);
@@ -184,10 +209,25 @@ $("#Jonk").bind("timeupdate", function() {
                 $("#open4").fadeIn(15000);
             }, 10000);
 
-                    
-            });
+        });
 
-            
+
         $(this).unbind("timeupdate");
     }
+});
+
+$("#lineup").hover(function(){
+    $(this).css("width", "250px");
+    }, function(){
+    $(this).css("width", "150px");
+});
+$("#rules").hover(function(){
+    $(this).css("width", "250px");
+    }, function(){
+    $(this).css("width", "150px");
+});
+$("#book").hover(function(){
+    $(this).css("width", "250px");
+    }, function(){
+    $(this).css("width", "150px");
 });

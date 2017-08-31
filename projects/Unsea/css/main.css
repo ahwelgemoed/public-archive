@@ -3,58 +3,145 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
+
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
 }
+
 body {
-	line-height: 1;
+    line-height: 1;
 }
-ol, ul {
-	list-style: none;
+
+ol,
+ul {
+    list-style: none;
 }
-blockquote, q {
-	quotes: none;
+
+blockquote,
+q {
+    quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
-body{
+body {
     background: black;
-}
-.body{
-    background: white;
+    margin: 0 auto;
 }
 
-video { 
+
+video {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -65,7 +152,8 @@ video {
     z-index: -100;
     transform: translateX(-50%) translateY(-50%);
 }
-#redbox1{
+
+#redbox1 {
     display: none;
     background: #d12429;
     opacity: 0.9;
@@ -75,7 +163,8 @@ video {
     padding: 5px;
     width: 60%;
 }
-#redbox2{
+
+#redbox2 {
     display: none;
     background: #d12429;
     opacity: 0.9;
@@ -85,7 +174,8 @@ video {
     padding: 5px;
     width: 90%;
 }
-#redbox3{
+
+#redbox3 {
     display: none;
     background: #d12429;
     opacity: 0.9;
@@ -95,7 +185,8 @@ video {
     padding: 5px;
     width: 70%;
 }
-#redbox4{
+
+#redbox4 {
     display: none;
     background: #d12429;
     opacity: 0.9;
@@ -105,7 +196,8 @@ video {
     padding: 5px;
     width: 80%;
 }
-h1{
+
+h1 {
     font-family: 'Oswald', sans-serif;
     font-size: 2.5em;
     display: none;
@@ -114,83 +206,176 @@ h1{
     z-index: 100;
     font-weight: 600;
 }
-.dogicon{
+
+.dogicon {
     position: absolute;
-    height: 20%;
-    width: 20%;
+    height: 10%;
+    width: 10%;
     right: 5%;
     bottom: 5%;
     display: none;
 }
-.dogan{
+
+.dogan {
     display: inline;
     animation: dog 3s ease;
 }
 
 @keyframes dog {
-    0%   { opacity: 0; 
-            bottom: 0%}
-    100% { opacity: 0.8;
-            bottom: 5% }
-  }
-
-.mapwrapper{
-    position: relative;
-
+    0% {
+        opacity: 0;
+        bottom: 0%
+    }
+    100% {
+        opacity: 0.8;
+        bottom: 5%
+    }
 }
-.off1 , .off2, .off3{
-    opacity: 0;
+
+.mapwrapper {
+    /* position: relative; */
+    width: 100%;
+    padding-bottom: 75%;
 }
-.mainstage{
-    position: absolute;
-    width: 130px;
-    height: 130px;
-    background: #020303;
-    text-align: center;
-    margin-left: 20%;
-    margin-top: 2%;
+
+mark {
+    color: #d12429;
+    background: none;
+    font-weight: 600
+}
+
+.viewer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    background: black;
+    /** <-- For the demo **/
+}
+
+.viewertext {
     color: white;
-    line-height: 130px;
+    font-size: 2em;
     font-family: 'Oswald', sans-serif;
-
-  }
-  .mainstagewidth{
-    width: 250px;
-    transition: all 2s;
-    background: #d12429;
-    
-
-  }
-
-  .jamesstage{
-    position: absolute;
-    width: 100px;
-    height: 100px;
-
+    margin-bottom: 20px;
     text-align: center;
-    margin-left: 80%;
-    margin-top: 3%;
-    color: white;
-    line-height: 100px;
-    font-family: 'Oswald', sans-serif;
-    animation-delay: 0.3s;
-    background: #d12429;
-  }
-  .jameswidth{
-    width: 200px;
-    background: #020303;
-    transition: all 2s;
-  }
-  .food{    
-    position: absolute;
-    width: 50px;
-    height: 100px;
-    background: #F1E17E;
-    text-align: center;
-    margin-left: 50%;
     margin-top: 10%;
-    color: white;
-    line-height: 100px;
+}
+
+.unsea {
+    color: black;
+    background: none;
+    font-weight: 600;
+    transition: all 2s;
+}
+
+.next {
     font-family: 'Oswald', sans-serif;
-    animation-delay: 0.3s;
-  }
+    background-color: #d12429;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: 2px solid #d12429;
+    transition: all 1s;
+    display: none;
+    width: 10%;
+    margin: 0 auto;
+}
+
+.next:hover {
+    background: black;
+    border: 2px solid #d12429;
+    transition: all 2s;
+    color: #d12429;
+}
+
+.good {
+    color: white;
+    font-size: 2em;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 10%;
+    display: none;
+    transition: all 2s;
+}
+
+.browsergif {
+    width: 600px;
+    margin: 0 auto;
+    transition: all 2s;
+}
+
+@media only screen and (max-width: 1280px) {
+    .next,
+    .good {
+        display: inline;
+        transition: all 2s;
+    }
+    .browsergif,
+    .viewertext {
+        display: none;
+        transition: all 2s;
+    }
+}
+
+@media only screen and (max-width: 930px) {
+    .next,
+    .good {
+        display: none;
+        transition: all 2s;
+    }
+    .browsergif,
+    .viewertext {
+        display: inline;
+        transition: all 2s;
+    }
+}
+
+.off1,
+.off2,
+.off3 {
+    display: none;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    padding-top: 20%;
+}
+#lineup{
+    width: 150px;
+    transition: all 2s;
+    
+}
+#rules{
+    width: 150px;
+    transition: all 2s;
+}
+#book{
+    width: 150px;
+    transition: all 2s;
+}
+
+.lineup{
+    display: initial;
+}
+.rules{
+    display: initial;
+
+}
+.book{
+    display: initial;
+
+} 
+
+
+
