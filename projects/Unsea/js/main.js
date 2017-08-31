@@ -47,20 +47,13 @@ $('.dogicon').click(function () {
             $("#redbox2").remove();
             $("#redbox3").remove();
             $("#redbox4").remove();
-            $(".dogicon").remove();
+            // $(".dogicon").remove();
             $("#stuff").remove();
             // Animate In Map Icons //
-            $(".off1").addClass("animated fadeInDown mainstage ");
-            $(".off2").addClass("animated fadeInDown jamesstage");
-            $(".off3").addClass("animated fadeInDown food");
-            $("body").addClass("body");
-            setTimeout(function () {
-                $(".off1").addClass("mainstagewidth");
-                $(".off2").addClass("jameswidth");
-                $(".off3").addClass("foodheight")
 
-
-            }, 500)
+            $("#lineup").addClass("animated fadeInDown lineup ");
+            $("#rules").addClass("animated fadeInDown rules");
+            $("#book").addClass("animated fadeInDown book");
         }, 1000);
     }
     ++clicks;
@@ -221,4 +214,20 @@ $("#Jonk").bind("timeupdate", function () {
 
         $(this).unbind("timeupdate");
     }
+});
+
+$("#lineup").hover(function(){
+    $(this).css("width", "250px");
+    }, function(){
+    $(this).css("width", "150px");
+});
+$("#rules").hover(function(){
+    $(this).css("width", "250px");
+    }, function(){
+    $(this).css("width", "150px");
+});
+$("#book").hover(function(){
+    $(this).css("width", "250px");
+    }, function(){
+    $(this).css("width", "150px");
 });
