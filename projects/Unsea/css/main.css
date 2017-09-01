@@ -358,15 +358,18 @@ mark {
 }
 #lineup{
     width: 150px;
+    cursor: pointer;
     transition: all 2s;
     
 }
 #rules{
-    width: 150px;
+    width: 180px;
+    cursor: pointer;
     transition: all 2s;
 }
 #book{
     width: 150px;
+    cursor: pointer;
     transition: all 2s;
 }
 
@@ -494,6 +497,12 @@ h2{
     color: #F1E17E;
     font-weight: 200;
 
+}
+h3{
+    font-family: 'Josefin Slab', serif;
+    font-weight: 100i;
+    font-size: 10px;
+    color: #d12429;
 }
 
 

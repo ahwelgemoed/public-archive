@@ -230,7 +230,7 @@ $("#lineup").hover(function () {
 $("#rules").hover(function () {
     $(this).css("width", "250px");
 }, function () {
-    $(this).css("width", "150px");
+    $(this).css("width", "180px");
 });
 $("#book").hover(function () {
     $(this).css("width", "250px");
@@ -257,25 +257,25 @@ $(window).resize(function () {
 var click = 0
 // Promo For clicking on all Links //
 
-$('#lineupModalClick, #rulesModal, #bookModal').click(function() {
+$('#lineupModalClick, #rulesModal, #bookModal').click(function () {
 
-    setTimeout(function(){
-    if (click === 3){
+    setTimeout(function () {
+        if (click === 3) {
             alert("You Seem too Like Us. Use Promo Code for 10% off on Kreef Hotel 56040349f");
             $(this).remove()
         }
     }, 5000)
     if (this.id == 'lineupModalClick') {
 
-        ++click;
+        click++;
     } else if (this.id == 'rulesModal') {
 
-        ++click;
+        click++;
     } else if (this.id == 'bookModal') {
-        ++click;
+        click++;
     }
 
- 
+
 });
 // Modals
 
