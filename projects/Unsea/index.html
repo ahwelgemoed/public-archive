@@ -23,7 +23,7 @@
 
     <div class="viewer">
 
-        <div id="viewertext" class="viewertext">Best Viewed in 4:3<br> Change Browser Size untill the
+        <div id="viewertext" class="viewertext">Best Viewed in Square Aspect Ratio<br> Change Browser Size untill the
             <mark>Button</mark> appears<br></div>
         <img class="browsergif" src="img/browser.gif" alt=""><br>
         <div class="good">BEFOK!</div><br>
@@ -63,10 +63,25 @@
 
 
     <div class="container">
-        <a href="http://"><img id="lineup" class="off1" src="img/lineup.svg" alt=""></a>
-        <a href="http://"><img id="rules" class="off2" src="img/rules.svg" alt=""></a>
-        <a href="http://"> <img id="book" class="off3" src="img/book.svg" alt=""></a>
+        <a id="lineupModal" href="#lineupanimatedModal"><img id="lineup" class="off1" src="img/lineup.svg" alt=""></a>
+        <a id="rulesModal" href="http://"><img id="rules" class="off2" src="img/rules.svg" alt=""></a>
+        <a id="bookModal" href="http://"> <img id="book" class="off3" src="img/book.svg" alt=""></a>
     </div>
+
+
+        <!--DEMO01-->
+        <div id="lineupanimatedModal" class="animated animatedModal-off zoomOut">
+            <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID  class="close-animatedModal" -->
+            <div class="close-animatedModal"> 
+                Close Lineup
+            </div>
+                
+            <div class="modal-content">
+                      <!--Your modal content goes here-->
+            </div>
+        </div>
+        
+        
 
 
 
@@ -75,6 +90,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/jquery.drawsvg.js"></script>
     <script src="js/anime.min.js"></script>
+    <script src="js/animatedModal.min.js"></script>
     <script src="js/main.js"></script>
 
 </body>

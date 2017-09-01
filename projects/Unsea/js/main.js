@@ -13,11 +13,17 @@ $('.next').click(function () {
     }, 2000)
 
 });
-// document.body.style.overflow = 'hidden';
+document.body.style.overflow = 'hidden';
 
 var aud = document.getElementById("Jonk");
 var clicks = 0;
+
 $('.dogicon').click(function () {
+// If time is past Poem Part it makes so that the Button only needs one click too skip Music Video //
+    if (aud.currentTime > 195) {
+        
+        ++clicks;
+    };
     if (clicks == 0) {
 
         aud.currentTime = 191.5;
@@ -231,3 +237,22 @@ $("#book").hover(function(){
     }, function(){
     $(this).css("width", "150px");
 });
+ 
+// Cheacks Aspectratio of Browser and Adds and removes Divs acordingly //
+
+$(window).resize(function() {
+    var aspectratio = $(window).width()/$(window).height()
+    if (aspectratio <= 1 || aspectratio >= 1.5){
+        $(".good").hide();
+        $(".next").hide();
+        $("#viewertext").show();
+        $(".browsergif").show();
+    }else{
+        $(".good").show()
+        $(".next").show()
+        $(".browsergif").hide();
+        $("#viewertext").hide();
+    }
+}).resize();
+
+$("#lineupModal").animatedModal();

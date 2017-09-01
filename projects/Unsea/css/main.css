@@ -199,6 +199,7 @@ video {
 
 h1 {
     font-family: 'Oswald', sans-serif;
+    line-height: 1.3;
     font-size: 2.5em;
     display: none;
     text-align: center;
@@ -260,6 +261,7 @@ mark {
     margin-bottom: 20px;
     text-align: center;
     margin-top: 10%;
+    line-height: 2;
 }
 
 .unsea {
@@ -312,7 +314,7 @@ mark {
     transition: all 2s;
 }
 
-@media only screen and (max-width: 1280px) {
+/* @media only screen and (max-width: 1280px) {
     .next,
     .good {
         display: inline;
@@ -323,9 +325,9 @@ mark {
         display: none;
         transition: all 2s;
     }
-}
+} */
 
-@media only screen and (max-width: 930px) {
+/* @media only screen and (max-width: 930px) {
     .next,
     .good {
         display: none;
@@ -336,7 +338,7 @@ mark {
         display: inline;
         transition: all 2s;
     }
-}
+} */
 
 .off1,
 .off2,
@@ -370,12 +372,15 @@ mark {
 }
 .rules{
     display: initial;
-
 }
 .book{
     display: initial;
-
 } 
-
+#lineupanimatedModal{
+    position: fixed; width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgb(57, 190, 185); overflow-y: auto; z-index: -9999; opacity: 1; animation-duration: 0.6s;
+}
+#rulesanimatedModal{
+    position: fixed; width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgb(57, 190, 185); overflow-y: auto; z-index: -9999; opacity: 1; animation-duration: 0.6s;
+}
 
 
