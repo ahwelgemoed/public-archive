@@ -254,8 +254,12 @@ $(window).resize(function () {
         $("#viewertext").hide();
     }
 }).resize();
-var click = 0
+
 // Promo For clicking on all Links //
+
+var click = 0
+
+
 
 $('#lineupModalClick, #rulesModal, #bookModal').click(function () {
 
@@ -277,7 +281,7 @@ $('#lineupModalClick, #rulesModal, #bookModal').click(function () {
 
 
 });
-// Modals
+// ----------------------  Modals  ---------------------- //
 
 // Get the modal
 var modal = document.getElementById('lineupModal');
@@ -298,9 +302,44 @@ span.onclick = function () {
     modal.style.display = "none";
 }
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
+
+// Get the modal
+var modals = document.getElementById('rulesModal');
+
+// Get the button that opens the modal
+var btns = document.getElementById("rulesModalClick");
+
+// Get the <span> element that closes the modal
+var spans = document.getElementsByClassName("closes")[0];
+
+// When the user clicks the button, open the modal 
+btns.onclick = function () {
+    modals.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+spans.onclick = function () {
+    modals.style.display = "none";
+}
+
+
+// Get the modal
+
+var modalss = document.getElementById('bookModal');
+
+// Get the button that opens the modal
+
+var btnss = document.getElementById("bookModalClick");
+
+// Get the <span> element that closes the modal
+var spanss = document.getElementById("closess");
+
+// When the user clicks the button, open the modal 
+btnss.onclick = function () {
+    modalss.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+spanss.onclick = function () {
+    modalss.style.display = "none";
 }

@@ -140,7 +140,6 @@ body {
     margin: 0 auto;
 }
 
-
 video {
     position: fixed;
     top: 50%;
@@ -299,7 +298,7 @@ mark {
 
 .good {
     color: white;
-    font-size: 2em;
+    font-size: 1.5em;
     font-family: 'Oswald', sans-serif;
     margin-bottom: 20px;
     text-align: center;
@@ -317,6 +316,7 @@ mark {
     transition: all 2s;
 }
 
+
 /* @media only screen and (max-width: 1280px) {
     .next,
     .good {
@@ -329,6 +329,7 @@ mark {
         transition: all 2s;
     }
 } */
+
 
 /* @media only screen and (max-width: 930px) {
     .next,
@@ -348,7 +349,8 @@ mark {
 .off3 {
     display: none;
 }
-.container{
+
+.container {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -356,54 +358,69 @@ mark {
     align-content: center;
     padding-top: 20%;
 }
-#lineup{
+
+#lineup {
     width: 150px;
     cursor: pointer;
     transition: all 2s;
-    
 }
-#rules{
+
+#rules {
     width: 180px;
     cursor: pointer;
     transition: all 2s;
 }
-#book{
+
+#book {
     width: 150px;
     cursor: pointer;
     transition: all 2s;
 }
 
-.lineup{
+.lineup {
     display: initial;
 }
-.rules{
+
+.rules {
     display: initial;
 }
-.book{
+
+.book {
     display: initial;
-} 
+}
 
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
     border-bottom: 10px red solid;
 }
 
+
 /* Modal Content */
-h2{
+
+h2 {
     font-size: 2em;
     font-family: 'Oswald', sans-serif;
-
 }
+
 .modal-content {
     position: relative;
     color: white;
@@ -411,25 +428,41 @@ h2{
     margin: auto;
     padding: 5px;
     width: 90%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
     animation-duration: 0.4s
 }
 
+
 /* Add Animation */
+
 @-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
 }
 
 @keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
 }
 
+
 /* The Close Button */
+
 .close {
     color: white;
     float: right;
@@ -439,6 +472,32 @@ h2{
 
 .close:hover,
 .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.closes {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.closes:hover,
+.closes:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+#closess {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#closess:hover,
+#closess:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
@@ -454,7 +513,9 @@ h2{
     font-size: 1.5em;
 }
 
-.modal-body {padding: 2px 16px;}
+.modal-body {
+    padding: 2px 16px;
+}
 
 .modal-footer {
     margin-top: 10px;
@@ -464,41 +525,43 @@ h2{
     font-family: 'Oswald', sans-serif;
     text-align: center;
 }
-.headline{
+
+.headline {
     font-family: 'Oswald', sans-serif;
     font-size: 3.5em;
     line-height: 1.3;
-
 }
-.yellow{
+
+
+.yellow {
     color: #F1E17E;
     font-weight: 200;
 }
 
-.secondline{
+.secondline {
     font-family: 'Oswald', sans-serif;
     font-size: 2em;
     line-height: 1.3;
-    font-weight: 200; 
-
+    font-weight: 200;
 }
-.yellows{
-    font-weight: 600; 
+
+.yellows {
+    font-weight: 600;
     color: #d12429;
-
 }
-.thirdline{
+
+.thirdline {
     font-family: 'Oswald', sans-serif;
     font-size: 1.5em;
     line-height: 1.3;
-
 }
-.yellowss{
+
+.yellowss {
     color: #F1E17E;
     font-weight: 200;
-
 }
-h3{
+
+h3 {
     font-family: 'Josefin Slab', serif;
     font-weight: 100i;
     font-size: 10px;
@@ -506,3 +569,16 @@ h3{
 }
 
 
+/* adds scroll to .modal */
+
+.modal-body {
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+}
+
+
+/* Hides Scroll Bar but keeps scroll ability. */
+
+.modal-body::-webkit-scrollbar {
+    display: none;
+}
