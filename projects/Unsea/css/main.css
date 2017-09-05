@@ -476,6 +476,7 @@ h2 {
     text-decoration: none;
     cursor: pointer;
 }
+
 .closes {
     color: white;
     float: right;
@@ -489,6 +490,7 @@ h2 {
     text-decoration: none;
     cursor: pointer;
 }
+
 #closess {
     color: white;
     float: right;
@@ -531,7 +533,6 @@ h2 {
     font-size: 3.5em;
     line-height: 1.3;
 }
-
 
 .yellow {
     color: #F1E17E;
@@ -581,4 +582,75 @@ h3 {
 
 .modal-body::-webkit-scrollbar {
     display: none;
+}
+
+li {
+    list-style-image: url('img/dogicon.png');
+    font-family: 'Oswald', sans-serif;
+    line-height: 1.5em;
+}
+
+form {
+    font-family: 'Oswald', sans-serif;
+    width: 80%;
+    margin: 0 auto;
+    color: #F1E17E;
+    text-align: center;
+
+}
+
+input {
+    width: 60%;
+    margin: 0 auto;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1em;
+    background: #5C5C5C;
+    color: #F1E17E;
+    border: none;
+}
+select{
+    background: #5C5C5C;
+    color: #F1E17E;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1em;
+    width: 60%;
+    margin: 0 auto;
+    border: none;
+}
+.bookings{
+    font-size: 1.5em;
+}
+textarea{
+    background: #5C5C5C;
+    color: #F1E17E;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1em;
+    width: 60%;
+    margin: 0 auto;
+    border: none;
+
+}
+.send {
+    font-family: 'Oswald', sans-serif;
+    background-color: #d12429;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: 2px solid #D12328;
+    transition: all 1s;
+    width: 10%;
+    margin: 0 auto;
+}
+
+.send:hover {
+    background: black;
+    border: 2px solid #d12429;
+    transition: all 2s;
+    color: #d12429;
 }
