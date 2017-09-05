@@ -265,7 +265,7 @@ $('#lineupModalClick, #rulesModal, #bookModal').click(function () {
 
     setTimeout(function () {
         if (click === 3) {
-            alert("You Seem too Like Us. Use Promo Code for 10% off on Kreef Hotel 56040349f");
+            modal.open();
             $(this).remove()
         }
     }, 5000)
@@ -284,7 +284,7 @@ $('#lineupModalClick, #rulesModal, #bookModal').click(function () {
 // ----------------------  Modals  ---------------------- //
 
 // Get the modal
-var modal = document.getElementById('lineupModal');
+var modala = document.getElementById('lineupModal');
 
 // Get the button that opens the modal
 var btn = document.getElementById("lineupModalClick");
@@ -294,12 +294,12 @@ var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
 btn.onclick = function () {
-    modal.style.display = "block";
+    modala.style.display = "block";
 }
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {
-    modal.style.display = "none";
+    modala.style.display = "none";
 }
 
 
@@ -343,3 +343,38 @@ btnss.onclick = function () {
 spanss.onclick = function () {
     modalss.style.display = "none";
 }
+
+var modal = new tingle.modal({
+    footer: true,
+    stickyFooter: false,
+    closeMethods: ['overlay', 'escape'],
+    // closeLabel: "Close",
+    cssClass: ['custom-class-1', 'custom-class-2'],
+    onOpen: function () {
+        console.log('modal open');
+    },
+    onClose: function () {
+        console.log('modal closed');
+    },
+    beforeClose: function () {
+        // here's goes some logic
+        // e.g. save content before closing the modal
+        return true; // close the modal
+        return false; // nothing happens
+    }
+});
+
+// set content
+modal.setContent('You Seem Too Like Dust, use this Promo code for 10% off <mark class="yellow">Kreef Hotel:</mark><br><br><mark class="yellows">STOFTOTSTOF</mark>');
+
+// add a button
+modal.addFooterBtn('Book It', 'tingle-btn tingle-btn--primary', function () {
+    modal.close();
+    modalss.style.display = "block";
+});
+
+// add another button
+modal.addFooterBtn('No Thanks I hate Free Things', 'tingle-btn tingle-btn--danger', function () {
+    // here goes some logic
+    modal.close();
+});
