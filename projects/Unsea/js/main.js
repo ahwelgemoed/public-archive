@@ -1,15 +1,12 @@
 "use strict";
 
 $('.next').click(function () {
-    // $('.browsergif').addClass('animated fadeOut');
     build();
     audio.play();
     $('.viewer').addClass('animated fadeOut');
 
     setTimeout(function () {
-        // $('.browsergif').remove();
         $(".viewer").remove();
-        // $(this).remove();
     }, 2000)
 
 });
@@ -19,6 +16,7 @@ var aud = document.getElementById("Jonk");
 var clicks = 0;
 
 $('.dogicon').click(function () {
+
     // If time is past Poem Part it makes so that the Button only needs one click too skip Music Video //
     if (aud.currentTime > 195) {
 
@@ -53,8 +51,8 @@ $('.dogicon').click(function () {
             $("#redbox2").remove();
             $("#redbox3").remove();
             $("#redbox4").remove();
-            // $(".dogicon").remove();
             $("#stuff").remove();
+
             // Animate In Map Icons //
 
             $("#lineup").addClass("animated fadeInDown lineup ");
@@ -158,8 +156,9 @@ function build() {
     var videos1 = videos[random]; // Changes random selected value to corresponding name in index//
 
     video.setAttribute('src', videos1);
-    //      console.log(videos1);
+
     video.play();
+
     videos.splice(random, 1); //Removes Already Played Video from Array
 
 }
@@ -186,6 +185,7 @@ audio.addEventListener("ended", function () {
         $("#redbox4").remove();
         $(".dogicon").remove();
         $("#stuff").remove();
+        
         // Animation for "Menue" goes here //
         $(".off1").addClass("animated fadeInDown mainstage ")
         $(".off2").addClass("animated fadeInDown jamesstage")
@@ -321,7 +321,6 @@ btns.onclick = function () {
 spans.onclick = function () {
     modals.style.display = "none";
 }
-
 
 // Get the modal
 

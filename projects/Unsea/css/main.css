@@ -557,6 +557,12 @@ h2 {
     line-height: 1.3;
 }
 
+ul {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5em;
+    line-height: 1.3;
+}
+
 .yellowss {
     color: #F1E17E;
     font-weight: 200;
@@ -596,7 +602,6 @@ form {
     margin: 0 auto;
     color: #F1E17E;
     text-align: center;
-
 }
 
 input {
@@ -608,7 +613,8 @@ input {
     color: #F1E17E;
     border: none;
 }
-select{
+
+select {
     background: #5C5C5C;
     color: #F1E17E;
     font-family: 'Oswald', sans-serif;
@@ -617,10 +623,12 @@ select{
     margin: 0 auto;
     border: none;
 }
-.bookings{
+
+.bookings {
     font-size: 1.5em;
 }
-textarea{
+
+textarea {
     background: #5C5C5C;
     color: #F1E17E;
     font-family: 'Oswald', sans-serif;
@@ -628,8 +636,8 @@ textarea{
     width: 60%;
     margin: 0 auto;
     border: none;
-
 }
+
 .send {
     font-family: 'Oswald', sans-serif;
     background-color: #d12429;
