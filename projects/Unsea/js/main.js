@@ -364,7 +364,7 @@ var modal = new tingle.modal({
 });
 
 // set content
-modal.setContent('You Seem Too Like Dust, use this Promo code for 10% off <mark class="yellow">Kreef Hotel:</mark><br><br><mark class="yellows">STOFTOTSTOF</mark>');
+modal.setContent('You Seem Too Like Dust, use this Promo code for 10% off <mark class="yellow">Kreef Hotel:</mark><br><br><mark class="yellows">"STOFTOTSTOF"</mark>');
 
 // add a button
 modal.addFooterBtn('Book It', 'tingle-btn tingle-btn--primary', function () {

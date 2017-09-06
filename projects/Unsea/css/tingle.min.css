@@ -77,8 +77,7 @@
     margin-bottom: auto;
     width: 60%;
     border-radius: 4px;
-    background: #000;
-    opacity: 1;
+    background: rgba(0, 0, 0, 0.8);
     cursor: auto;
     -webkit-transition: -webkit-transform .3s cubic-bezier(.175, .885, .32, 1.275);
     transition: -webkit-transform .3s cubic-bezier(.175, .885, .32, 1.275);
@@ -99,7 +98,7 @@
     width: auto;
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
-    background: #000;
+    background: rgba(0, 0, 0, 0.8);
     cursor: auto
 }
 
@@ -151,7 +150,7 @@
 .tingle-btn {
     display: inline-block;
     margin: 0 .5rem;
-    padding: 1rem 2rem;
+    padding: 5px 10px;
     border: none;
     background-color: grey;
     box-shadow: none;
@@ -162,17 +161,18 @@
     font-family: inherit;
     line-height: normal;
     cursor: pointer;
+    margin-left: 5px;
     -webkit-transition: background-color .4s ease;
     transition: background-color .4s ease
 }
 
 .tingle-btn--primary {
-    background-color: #F1E17E;
+    background-color: #d12429;
     font-size: 1em;
 }
 
 .tingle-btn--danger {
-    background-color: #d12429;
+    background-color: #F1E17E;
     font-size: 1em;
 }
 
