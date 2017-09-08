@@ -58,6 +58,9 @@ $('.dogicon').click(function () {
             $("#lineup").addClass("animated fadeInDown lineup ");
             $("#rules").addClass("animated fadeInDown rules");
             $("#book").addClass("animated fadeInDown book");
+            // $('myOjbect').css('background-image', 'url(' + ../img/bg2.jpg + ')');
+            $('body').addClass('bgimg');
+
         }, 1000);
     }
     ++clicks;
@@ -247,11 +250,21 @@ $(window).resize(function () {
         $(".next").hide();
         $("#viewertext").show();
         $(".browsergif").show();
+        $(".viewer").removeClass("viewers animated fadeIn")
+        $("#viewertext").addClass("animated fadeIn")
+        $(".browsergif").addClass("animated fadeIn")
+        
     } else {
         $(".good").show()
         $(".next").show()
         $(".browsergif").hide();
         $("#viewertext").hide();
+        $(".viewer").addClass("viewers animated fadeIn")
+        $(".good").addClass("animated fadeIn")
+        $(".next").addClass("animated fadeIn")
+
+        
+
     }
 }).resize();
 
@@ -267,6 +280,7 @@ $('#lineupModalClick, #rulesModal, #bookModal').click(function () {
         if (click === 3) {
             modal.open();
             $(this).remove()
+            audios.play();
         }
     }, 5000)
     if (this.id == 'lineupModalClick') {
@@ -342,6 +356,7 @@ btnss.onclick = function () {
 spanss.onclick = function () {
     modalss.style.display = "none";
 }
+var audios = document.getElementById('Dronk');
 
 var modal = new tingle.modal({
     footer: true,
@@ -354,6 +369,7 @@ var modal = new tingle.modal({
     },
     onClose: function () {
         console.log('modal closed');
+        audios.pause();
     },
     beforeClose: function () {
         // here's goes some logic
@@ -361,19 +377,26 @@ var modal = new tingle.modal({
         return true; // close the modal
         return false; // nothing happens
     }
+    
 });
 
+
 // set content
-modal.setContent('You Seem Too Like Dust, use this Promo code for 10% off <mark class="yellow">Kreef Hotel:</mark><br><br><mark class="yellows">STOFTOTSTOF</mark>');
+modal.setContent('<h2 class ="h3">Dagdronk Kom ons raak n bietjie dagdronk...</h2> <br> You Seem Too Like Dust, use this Promo code for 10% off <mark class="yellow">Kreef Hotel:</mark><br><br><mark class="yellows">"STOFTOTSTOF"</mark>');
 
 // add a button
 modal.addFooterBtn('Book It', 'tingle-btn tingle-btn--primary', function () {
     modal.close();
+    audios.pause();
     modalss.style.display = "block";
+    
+ 
+
 });
 
 // add another button
 modal.addFooterBtn('No Thanks I hate Free Things', 'tingle-btn tingle-btn--danger', function () {
     // here goes some logic
     modal.close();
+
 });
