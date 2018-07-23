@@ -2,7 +2,7 @@
   "name": "profile",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://ahwelgemoed.github.io",
+  "homepage": "http://ahwelgemoed.github.io/ahwelgemoed.github.io",
   "dependencies": {
     "bloomer": "^0.6.3",
     "bulma": "^0.7.1",
