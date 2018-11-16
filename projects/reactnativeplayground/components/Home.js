@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { ImageBackground } from 'react-native';
+import { withNavigation } from 'react-navigation';
+import { ImageBackground, View, Linking } from 'react-native';
 import {
   Container,
   Content,
@@ -10,19 +11,39 @@ import {
   CardItem,
   Left,
   Right,
-  Text
+  Text,
+  Subtitle,
+  Title
 } from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 
 export default class Home extends Component {
   static navigationOptions = {
-    header: null
+    headerStyle: { height: 80, backgroundColor: '#000' },
+    headerTitle: (
+      <View style={{ width: '100%' }}>
+        <Title
+          style={{ color: '#fff', fontFamily: 'Streamster', fontSize: 30 }}
+        >
+          Dis Net Jy
+        </Title>
+        <Subtitle
+          style={{
+            color: '#fff',
+            fontFamily: 'Proxima Nova Alt',
+            fontSize: 16
+          }}
+        >
+          KLYNTJI
+        </Subtitle>
+      </View>
+    )
   };
   render() {
     const { buttonStyle, fontStyle, fontStyles } = styles;
     return (
       <Container>
-        <ImageBackground
+        {/* <ImageBackground
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
@@ -30,7 +51,7 @@ export default class Home extends Component {
             height: 150
           }}
           source={require('../assets/Header.gif')}
-        />
+        /> */}
         <Content style={{ margin: 20 }}>
           <Grid>
             <Row>
@@ -77,16 +98,30 @@ export default class Home extends Component {
                   onPress={() => this.props.navigation.navigate('PoemsList')}
                 >
                   <Left style={{ paddingLeft: 20 }}>
-                    <Icon style={{ fontSize: 20 }} name="book" />
+                    <Icon
+                      type="FontAwesome"
+                      style={{ fontSize: 20 }}
+                      name="book"
+                    />
                   </Left>
                   <Text style={fontStyle}>VIEW ALL</Text>
                 </Button>
               </Col>
               <Col>
-                <Button iconRight style={buttonStyle} block light>
+                <Button
+                  iconRight
+                  style={buttonStyle}
+                  block
+                  light
+                  onPress={() => this.props.navigation.navigate('PostPoem')}
+                >
                   <Text style={fontStyle}>POST</Text>
                   <Right style={{ paddingRight: 20 }}>
-                    <Icon style={{ fontSize: 20 }} name="add" />
+                    <Icon
+                      style={{ fontSize: 20 }}
+                      name="plus"
+                      type="FontAwesome"
+                    />
                   </Right>
                 </Button>
               </Col>
@@ -95,16 +130,29 @@ export default class Home extends Component {
               <Col style={{ paddingRight: 20 }}>
                 <Button iconLeft style={buttonStyle} block light>
                   <Left style={{ paddingLeft: 20 }}>
-                    <Icon style={{ fontSize: 20 }} name="heart" />
+                    <Icon
+                      type="FontAwesome"
+                      style={{ fontSize: 20 }}
+                      name="heart"
+                    />
                   </Left>
-                  <Text style={fontStyle}>KLYNTJI</Text>
+                  <Text
+                    onPress={() => Linking.openURL(`https://klyntji.com/`)}
+                    style={fontStyle}
+                  >
+                    KLYNTJI
+                  </Text>
                 </Button>
               </Col>
               <Col>
                 <Button iconRight style={buttonStyle} block light>
                   <Text style={fontStyle}>ABOUT</Text>
                   <Right style={{ paddingRight: 20 }}>
-                    <Icon style={{ fontSize: 22 }} name="help" />
+                    <Icon
+                      type="FontAwesome"
+                      style={{ fontSize: 22 }}
+                      name="info"
+                    />
                   </Right>
                 </Button>
               </Col>
@@ -123,7 +171,11 @@ export default class Home extends Component {
                   light
                 >
                   <Left style={{ paddingLeft: 20 }}>
-                    <Icon style={{ fontSize: 20 }} name="bug" />
+                    <Icon
+                      type="FontAwesome"
+                      style={{ fontSize: 20 }}
+                      name="bug"
+                    />
                   </Left>
                   <Text style={fontStyles}>REPOT BUG</Text>
                 </Button>
@@ -143,20 +195,13 @@ export default class Home extends Component {
                 >
                   <Text style={fontStyles}>SUGGESTION</Text>
                   <Right style={{ paddingRight: 20 }}>
-                    <Icon name="flash" />
+                    <Icon type="FontAwesome" name="question" />
                   </Right>
                 </Button>
               </Col>
             </Row>
           </Grid>
         </Content>
-        {/* <Footer>
-          <FooterTab>
-            <Button full>
-              <Text>Footer</Text>
-            </Button>
-          </FooterTab>
-        </Footer> */}
       </Container>
     );
   }

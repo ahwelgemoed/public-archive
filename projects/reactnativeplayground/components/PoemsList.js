@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+// import { captureRef } from 'react-native-view-shot';
+
 import {
   StyleSheet,
   Text,
@@ -7,15 +9,37 @@ import {
   ImageBackground,
   TouchableOpacity,
   Dimensions,
-  Linking
+  Linking,
+  Image,
+  Button,
+  Alert,
+  CameraRoll
 } from 'react-native';
-import { Icon, Container, Content, Right } from 'native-base';
+import { Icon, Container, Content, Right, Title, Subtitle } from 'native-base';
 import axios from 'axios';
 import moment from 'moment';
 
 export default class PoemsList extends Component {
   static navigationOptions = {
-    header: null
+    headerStyle: { height: 80, backgroundColor: '#000' },
+    headerTitle: (
+      <View style={{ width: '100%' }}>
+        <Title
+          style={{ color: '#fff', fontFamily: 'Streamster', fontSize: 30 }}
+        >
+          Dis Net Jy
+        </Title>
+        <Subtitle
+          style={{
+            color: '#fff',
+            fontFamily: 'Proxima Nova Alt',
+            fontSize: 16
+          }}
+        >
+          KLYNTJI
+        </Subtitle>
+      </View>
+    )
   };
   state = {
     poems: [],
@@ -30,76 +54,75 @@ export default class PoemsList extends Component {
     );
   }
   render() {
+    var now = 1;
     return (
       <Container>
-        <ImageBackground
-          style={{
-            width: '100%',
-            height: 150
-          }}
-          source={require('../assets/Header.gif')}
+        <View
+          style={styles.container}
+          collapsable={false}
+          showsHorizontalScrollIndicator={false}
         >
-          <TouchableOpacity
-            style={{ paddingLeft: 20, paddingTop: 120 }}
-            onPress={() => this.props.navigation.navigate('Home')}
-          >
-            <Text style={{ color: '#fff', fontFamily: 'Montserrat-SemiBold' }}>
-              <Icon
-                style={{
-                  color: '#fff',
-                  fontSize: 18,
-                  paddingLeft: 20,
-                  fontFamily: 'Montserrat-SemiBold'
-                }}
-                name="arrow-back"
-              />{' '}
-              Back
-            </Text>
-          </TouchableOpacity>
-        </ImageBackground>
-        <View style={styles.container} showsHorizontalScrollIndicator={false}>
-          <Content
-            style={{ margin: 20, flex: 1 }}
-            showsHorizontalScrollIndicator={false}
-          >
-            <FlatList
-              pagingEnabled={true}
-              showsVerticalScrollIndicator={false}
-              showsHorizontalScrollIndicator={false}
-              data={this.state.poems}
-              horizontal={true}
-              renderItem={({ item }) => (
-                <View style={styles.flatview}>
-                  <Text style={styles.name}>{item.name}</Text>
-                  {item.handle ? (
-                    <Text
-                      onPress={() =>
-                        Linking.openURL(
-                          `https://www.instagram.com/${item.handle}`
-                        )
-                      }
-                      style={styles.handle}
-                    >
-                      <Icon
-                        style={styles.icon}
-                        type="FontAwesome"
-                        name="instagram"
-                      />{' '}
-                      {item.handle}
-                    </Text>
-                  ) : null}
-
-                  <Text style={styles.body}>{item.body}</Text>
-                  <Right>
-                    <Text style={styles.date}>
-                      {moment(item.date).fromNow()}
-                    </Text>
-                  </Right>
-                </View>
-              )}
-              keyExtractor={item => item._id}
+          {this.state.loading ? (
+            <Image
+              style={{
+                flex: 1,
+                width: '70%'
+              }}
+              resizeMode={'contain'}
+              source={require('../assets/LOAD.gif')}
             />
-          </Content>
+          ) : (
+            <Content
+              style={{ margin: 20, flex: 1 }}
+              showsHorizontalScrollIndicator={false}
+            >
+              <FlatList
+                pagingEnabled={true}
+                initialNumToRender={5}
+                maxToRenderPerBatch={4}
+                showsVerticalScrollIndicator={false}
+                showsHorizontalScrollIndicator={false}
+                data={this.state.poems}
+                horizontal={true}
+                ref="view"
+                renderItem={({ item }) => (
+                  <View style={styles.flatview} ref={now++}>
+                    <Text style={styles.name}>{item.name}</Text>
+                    {item.handle ? (
+                      <Text
+                        onPress={() =>
+                          Linking.openURL(
+                            `https://www.instagram.com/${item.handle}`
+                          )
+                        }
+                        style={styles.handle}
+                      >
+                        <Icon
+                          style={styles.icon}
+                          type="FontAwesome"
+                          name="instagram"
+                        />{' '}
+                        {item.handle}
+                      </Text>
+                    ) : null}
+
+                    <Text style={styles.body}>{item.body}</Text>
+                    <View
+                      style={{
+                        flexDirection: 'row',
+                        justifyContent: 'flex-end'
+                      }}
+                    >
+                      <Text style={styles.date}>
+                        {moment(item.date).fromNow()}
+                      </Text>
+                    </View>
+                  </View>
+                )}
+                keyExtractor={item => item._id}
+              />
+            </Content>
+          )}
         </View>
       </Container>
     );
@@ -116,6 +139,7 @@ const styles = StyleSheet.create({
   },
   flatview: {
     width: screenWidth,
+    backgroundColor: '#fff',
     // marginLeft: 100,
     // marginRight: 10
     paddingLeft: 20,
@@ -141,7 +165,9 @@ const styles = StyleSheet.create({
   },
   date: {
     fontFamily: 'Lato-Light',
-    fontSize: 12
+    fontSize: 12,
+    alignSelf: 'flex-end',
+    textAlign: 'right'
     // float: 'right',
     // transform: [{ rotate: '90deg' }]
   }
