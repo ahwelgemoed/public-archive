@@ -20,6 +20,7 @@ import { Col, Row, Grid } from 'react-native-easy-grid';
 export default class Home extends Component {
   static navigationOptions = {
     headerStyle: { height: 80, backgroundColor: '#000' },
+
     headerTitle: (
       <View style={{ width: '100%' }}>
         <Title
@@ -52,7 +53,7 @@ export default class Home extends Component {
           }}
           source={require('../assets/Header.gif')}
         /> */}
-        <Content style={{ margin: 20 }}>
+        <Content style={{ padding: 20 }}>
           <Grid>
             <Row>
               <Col>
@@ -69,15 +70,15 @@ export default class Home extends Component {
                   </CardItem>
                   <CardItem bordered>
                     <Body>
-                      <Text style={{ fontFamily: 'Lora-Regular' }}>
+                      <Text style={{ fontFamily: 'Lato-Light' }}>
                         A simple space to add a Thought/Poem or anything really,
                         It’s anonymous and very open to abuse.{' '}
                       </Text>
-                      <Text style={{ fontFamily: 'Lora-Regular' }}>
+                      <Text style={{ fontFamily: 'Lato-Light' }}>
                         It can't be deleted or edited. Use any Language or
                         Emoji.
                       </Text>
-                      <Text style={{ fontFamily: 'Lora-Regular' }}>
+                      <Text style={{ fontFamily: 'Lato-Light' }}>
                         We ask that you post anything you want as long as it's
                         true, make it short, make it long, just fucking make it.
                         You can add your Instagram handle if you want to be
@@ -128,7 +129,13 @@ export default class Home extends Component {
             </Row>
             <Row style={{ paddingTop: 20 }}>
               <Col style={{ paddingRight: 20 }}>
-                <Button iconLeft style={buttonStyle} block light>
+                <Button
+                  onPress={() => Linking.openURL(`https://klyntji.com/`)}
+                  iconLeft
+                  style={buttonStyle}
+                  block
+                  light
+                >
                   <Left style={{ paddingLeft: 20 }}>
                     <Icon
                       type="FontAwesome"
@@ -136,12 +143,7 @@ export default class Home extends Component {
                       name="heart"
                     />
                   </Left>
-                  <Text
-                    onPress={() => Linking.openURL(`https://klyntji.com/`)}
-                    style={fontStyle}
-                  >
-                    KLYNTJI
-                  </Text>
+                  <Text style={fontStyle}>KLYNTJI</Text>
                 </Button>
               </Col>
               <Col>
@@ -213,7 +215,8 @@ const styles = {
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.2,
-    borderRadius: 5
+    borderRadius: 5,
+    backgroundColor: '#fff'
   },
   fontStyle: {
     fontFamily: 'Montserrat-SemiBold',

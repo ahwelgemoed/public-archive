@@ -22,6 +22,7 @@ import moment from 'moment';
 export default class PoemsList extends Component {
   static navigationOptions = {
     headerStyle: { height: 80, backgroundColor: '#000' },
+    headerTintColor: 'white',
     headerTitle: (
       <View style={{ width: '100%' }}>
         <Title
@@ -44,6 +45,18 @@ export default class PoemsList extends Component {
   state = {
     poems: [],
     loading: true
+  };
+  Report = item => {
+    const repotedPoem = {
+      name: item.name,
+      body: item.body,
+      handle: item.handle
+    };
+    axios
+      .post(`http://www.disnetjy.com/api/send`, repotedPoem)
+      .then(res => res.data);
+    console.log(repotedPoem);
+    alert('Poem Reported, we will review.');
   };
   componentWillMount() {
     axios.get(`http://www.disnetjy.com/api/poems`).then(res =>
@@ -107,6 +120,7 @@ export default class PoemsList extends Component {
                     ) : null}
 
                     <Text style={styles.body}>{item.body}</Text>
+
                     <View
                       style={{
                         flexDirection: 'row',
@@ -115,6 +129,12 @@ export default class PoemsList extends Component {
                     >
                       <Text style={styles.date}>
                         {moment(item.date).fromNow()}
+                      </Text>
+                      <Text
+                        onPress={this.Report.bind(this, item)}
+                        style={styles.date}
+                      >
+                        Report
                       </Text>
                     </View>
                   </View>
@@ -143,7 +163,11 @@ const styles = StyleSheet.create({
     // marginLeft: 100,
     // marginRight: 10
     paddingLeft: 20,
-    paddingRight: 20
+    paddingRight: 20,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.2,
+    borderRadius: 5
   },
   name: {
     fontFamily: 'Proxima Nova Alt',
@@ -153,12 +177,14 @@ const styles = StyleSheet.create({
   handle: {
     fontFamily: 'Proxima Nova Alt',
     fontSize: 16,
-    textAlign: 'center',
-    paddingBottom: 10
+    textAlign: 'center'
+    // paddingBottom: 10
   },
   body: {
     fontFamily: 'Lato-Light',
-    fontSize: 18
+    fontSize: 18,
+    paddingBottom: 10,
+    paddingTop: 10
   },
   icon: {
     fontSize: 14

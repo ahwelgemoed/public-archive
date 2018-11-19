@@ -33,6 +33,7 @@ import {
 export default class PostPoem extends Component {
   static navigationOptions = {
     headerStyle: { height: 80, backgroundColor: '#000' },
+    headerTintColor: 'white',
     headerTitle: (
       <View style={{ width: '100%' }}>
         <Title
