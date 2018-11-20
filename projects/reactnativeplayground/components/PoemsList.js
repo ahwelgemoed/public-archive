@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-// import { captureRef } from 'react-native-view-shot';
-
+import { captureRef } from 'react-native-view-shot';
+import ViewShot from 'react-native-view-shot';
 import {
   StyleSheet,
   Text,
@@ -44,7 +44,14 @@ export default class PoemsList extends Component {
   };
   state = {
     poems: [],
-    loading: true
+    loading: true,
+    res: '',
+    value: {
+      format: 'png',
+      quality: 1,
+      result: 'tmpfile',
+      snapshotContentContainer: false
+    }
   };
   Report = item => {
     const repotedPoem = {
@@ -66,7 +73,36 @@ export default class PoemsList extends Component {
       })
     );
   }
+  snapshot = refname => () => {
+    console.log(this.refs[refname]);
+    captureRef(this.refs[refname], this.state.value)
+      .then(res =>
+        this.setState({
+          error: null,
+          res,
+          previewSource: {
+            uri:
+              this.state.value.result === 'base64'
+                ? 'data:image/' + this.state.value.format + ';base64,' + res
+                : res
+          }
+        })
+      )
+      .then(
+        CameraRoll.saveToCameraRoll(this.state.res).then(
+          Alert.alert('Success', 'Photo added to camera roll!')
+        )
+      )
+
+      .catch(
+        error => (
+          console.warn(error),
+          this.setState({ error, res: null, previewSource: null })
+        )
+      );
+  };
   render() {
+    console.log(this.state);
     var now = 1;
     return (
       <Container>
@@ -86,20 +122,22 @@ export default class PoemsList extends Component {
             />
           ) : (
             <Content
+              collapsable={false}
               style={{ margin: 20, flex: 1 }}
               showsHorizontalScrollIndicator={false}
             >
               <FlatList
                 pagingEnabled={true}
-                initialNumToRender={5}
+                initialNumToRender={1}
                 maxToRenderPerBatch={4}
                 showsVerticalScrollIndicator={false}
                 showsHorizontalScrollIndicator={false}
                 data={this.state.poems}
                 horizontal={true}
-                ref="view"
+                collapsable={false}
+                ref="full"
                 renderItem={({ item }) => (
-                  <View style={styles.flatview} ref={now++}>
+                  <View style={styles.flatview} collapsable={false}>
                     <Text style={styles.name}>{item.name}</Text>
                     {item.handle ? (
                       <Text
@@ -130,11 +168,20 @@ export default class PoemsList extends Component {
                       <Text style={styles.date}>
                         {moment(item.date).fromNow()}
                       </Text>
+
                       <Text
                         onPress={this.Report.bind(this, item)}
                         style={styles.date}
                       >
                         Report
+                      </Text>
+
+                      <Text
+                        collapsable={false}
+                        onPress={this.snapshot('full')}
+                        style={styles.date}
+                      >
+                        Save To Camera
                       </Text>
                     </View>
                   </View>
