@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import { withNavigation } from 'react-navigation';
-import { ImageBackground, View, Linking, LayoutAnimation } from 'react-native';
+import {
+  ImageBackground,
+  View,
+  Linking,
+  LayoutAnimation,
+  ScrollView
+} from 'react-native';
 import {
   Container,
   Content,

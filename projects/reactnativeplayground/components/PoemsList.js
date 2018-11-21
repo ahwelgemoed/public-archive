@@ -14,7 +14,8 @@ import {
   Button,
   Alert,
   CameraRoll,
-  LayoutAnimation
+  LayoutAnimation,
+  ScrollView
 } from 'react-native';
 import { Icon, Container, Content, Right, Title, Subtitle } from 'native-base';
 import axios from 'axios';
@@ -123,6 +124,17 @@ export default class PoemsList extends Component {
         console.log('save failed ' + error);
       });
   };
+  // onEndReached() {
+  //   // this.refs.full.getNode().scrollToOffset({ offset: 0, animated: true });
+  //   this.refs.full.scrollToOffset({ x: 0, y: 0, animated: true });
+  // }
+  scrollToBottom(animated = true) {
+    const scrollHeight = this.contentHeight - this.scrollViewHeight;
+    if (scrollHeight > 0) {
+      const scrollResponder = this.refs.full.getScrollResponder();
+      scrollResponder.scrollResponderScrollTo({ x: 0, scrollHeight, animated });
+    }
+  }
   render() {
     console.log(this.state);
     var now = 1;
@@ -143,15 +155,21 @@ export default class PoemsList extends Component {
               source={require('../assets/LOAD.gif')}
             />
           ) : (
-            <Content
-              collapsable={false}
-              style={{ margin: 20, flex: 1 }}
-              showsHorizontalScrollIndicator={false}
-            >
+            // <Content
+            //   collapsable={false}
+            //   style={{ margin: 20, flex: 1 }}
+            //   showsHorizontalScrollIndicator={false}
+            // >
+            <View style={{ margin: 20, flex: 1 }}>
               <FlatList
+                onContentSizeChange={(w, h) => (this.contentHeight = h)}
+                onLayout={ev =>
+                  (this.scrollViewHeight = ev.nativeEvent.layout.height)
+                }
+                onScrollEndDrag={this.scrollToBottom.bind(this)}
                 pagingEnabled={true}
                 initialNumToRender={1}
-                maxToRenderPerBatch={4}
+                maxToRenderPerBatch={1}
                 showsVerticalScrollIndicator={false}
                 showsHorizontalScrollIndicator={false}
                 data={this.state.poems}
@@ -159,7 +177,7 @@ export default class PoemsList extends Component {
                 collapsable={false}
                 ref="full"
                 renderItem={({ item }) => (
-                  <View style={styles.flatview} collapsable={false}>
+                  <ScrollView style={styles.flatview} collapsable={false}>
                     <Text style={styles.name}>{item.name}</Text>
                     {item.handle ? (
                       <Text
@@ -205,11 +223,12 @@ export default class PoemsList extends Component {
                         Save To Camera
                       </Text> */}
                     </View>
-                  </View>
+                  </ScrollView>
                 )}
                 keyExtractor={item => item._id}
               />
-            </Content>
+            </View>
+            // </Content>
           )}
         </View>
       </Container>
@@ -228,8 +247,7 @@ const styles = StyleSheet.create({
   flatview: {
     width: screenWidth,
     backgroundColor: '#fff',
-    // marginLeft: 100,
-    // marginRight: 10
+    color: '#000',
     paddingLeft: 20,
     paddingRight: 20,
     shadowColor: '#000',
