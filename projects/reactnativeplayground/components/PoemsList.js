@@ -100,9 +100,10 @@ export default class PoemsList extends Component {
         })
       )
       .then(
-        CameraRoll.saveToCameraRoll(this.state.res).then(
-          Alert.alert('Success', 'Photo added to camera roll!')
-        )
+        this.saveCamera()
+        // CameraRoll.saveToCameraRoll(this.state.res).then(
+        //   Alert.alert('Success', 'Photo added to camera roll!')
+        // )
       )
 
       .catch(
@@ -111,6 +112,16 @@ export default class PoemsList extends Component {
           this.setState({ error, res: null, previewSource: null })
         )
       );
+  };
+  saveCamera = () => {
+    var promise = CameraRoll.saveToCameraRoll(this.state.res);
+    promise
+      .then(function(result) {
+        console.log('save succeeded ' + result);
+      })
+      .catch(function(error) {
+        console.log('save failed ' + error);
+      });
   };
   render() {
     console.log(this.state);
@@ -186,14 +197,13 @@ export default class PoemsList extends Component {
                       >
                         Report
                       </Text>
-
-                      <Text
+                      {/* <Text
                         collapsable={false}
                         onPress={this.snapshot('full')}
                         style={styles.date}
                       >
                         Save To Camera
-                      </Text>
+                      </Text> */}
                     </View>
                   </View>
                 )}
