@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withNavigation } from 'react-navigation';
-import { ImageBackground, View, Linking } from 'react-native';
+import { ImageBackground, View, Linking, LayoutAnimation } from 'react-native';
 import {
   Container,
   Content,
@@ -18,6 +18,16 @@ import {
 import { Col, Row, Grid } from 'react-native-easy-grid';
 
 export default class Home extends Component {
+  componentDidMount() {
+    LayoutAnimation.configureNext({
+      duration: 500,
+      create: {
+        type: LayoutAnimation.Types.easeInEaseOut,
+        property: LayoutAnimation.Properties.opacity
+      },
+      update: { type: LayoutAnimation.Types.easeInEaseOut }
+    });
+  }
   static navigationOptions = {
     headerStyle: { height: 80, backgroundColor: '#000' },
 

@@ -13,7 +13,8 @@ import {
   Image,
   Button,
   Alert,
-  CameraRoll
+  CameraRoll,
+  LayoutAnimation
 } from 'react-native';
 import { Icon, Container, Content, Right, Title, Subtitle } from 'native-base';
 import axios from 'axios';
@@ -53,6 +54,16 @@ export default class PoemsList extends Component {
       snapshotContentContainer: false
     }
   };
+  componentWillUpdate() {
+    LayoutAnimation.configureNext({
+      duration: 500,
+      create: {
+        type: LayoutAnimation.Types.easeInEaseOut,
+        property: LayoutAnimation.Properties.opacity
+      },
+      update: { type: LayoutAnimation.Types.easeInEaseOut }
+    });
+  }
   Report = item => {
     const repotedPoem = {
       name: item.name,

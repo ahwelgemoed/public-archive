@@ -8,7 +8,9 @@ import {
   StyleSheet,
   AsyncStorage,
   View,
-  Alert
+  Alert,
+  Platform,
+  LayoutAnimation
 } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import {
@@ -31,6 +33,14 @@ import {
 } from 'native-base';
 
 export default class PostPoem extends Component {
+  constructor() {
+    super();
+
+    if (Platform.OS === 'android') {
+      UIManager.setLayoutAnimationEnabledExperimental &&
+        UIManager.setLayoutAnimationEnabledExperimental(true);
+    }
+  }
   static navigationOptions = {
     headerStyle: { height: 80, backgroundColor: '#000' },
     headerTintColor: 'white',
@@ -60,6 +70,16 @@ export default class PostPoem extends Component {
     localValues: '',
     showToast: false
   };
+  componentWillUpdate() {
+    LayoutAnimation.configureNext({
+      duration: 300,
+      create: {
+        type: LayoutAnimation.Types.easeInEaseOut,
+        property: LayoutAnimation.Properties.opacity
+      },
+      update: { type: LayoutAnimation.Types.easeInEaseOut }
+    });
+  }
   saveData = async () => {
     const { name, body, handle } = this.state;
     if (!name) {
