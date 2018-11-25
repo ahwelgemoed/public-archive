@@ -63,7 +63,7 @@ export default class ModalMenu extends Component {
                   borderWidth: 2,
                   borderColor: '#d7eff1'
                 }}
-                onPress={this._toggleModal}
+                onPress={this.props.share}
               >
                 <Text
                   style={{
@@ -92,7 +92,7 @@ export default class ModalMenu extends Component {
                   marginBottom: 20,
                   color: '#d7eff1'
                 }}
-                onPress={this._toggleModal}
+                onPress={this.props.report}
               >
                 <Text
                   style={{

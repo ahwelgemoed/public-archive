@@ -240,7 +240,11 @@ export default class PoemsList extends Component {
                               ) : null}
                             </Col>
                             <Col style={{ width: 20 }}>
-                              <ModalMenu poem={item} />
+                              <ModalMenu
+                                poem={item}
+                                report={this.Report.bind(this, item)}
+                                share={this.snapshot(`textInput${item._id}`)}
+                              />
                             </Col>
                           </Row>
                           <Text style={styles.body}>{item.body}</Text>
@@ -253,12 +257,12 @@ export default class PoemsList extends Component {
                               </View>
                             </Col>
                           </Row>
-                          <Text
+                          {/* <Text
                             onPress={this.Report.bind(this, item)}
                             style={styles.date}
                           >
                             Report
-                          </Text>
+                          </Text> */}
                           {/* <Button
                               collapsable={false}
                               onPress={this.snapshot(`textInput${item._id}`)}
