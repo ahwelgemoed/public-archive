@@ -13,8 +13,8 @@ export default class App extends Component<Props> {
   }
 }
 const AppNavigator = StackNavigator({
+  PoemsList: { screen: PoemsList },
   Home: { screen: Home },
-  PostPoem: { screen: PostPoem },
-  PoemsList: { screen: PoemsList }
+  PostPoem: { screen: PostPoem }
 });
 AppRegistry.registerComponent('App', () => App);
