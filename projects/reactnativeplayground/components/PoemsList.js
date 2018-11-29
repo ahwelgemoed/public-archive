@@ -2,38 +2,30 @@ import React, { Component } from 'react';
 import { captureRef } from 'react-native-view-shot';
 import Share from 'react-native-share';
 import RNFetchBlob from 'rn-fetch-blob';
-import Modal from 'react-native-modal';
 import ModalMenu from './ModalMenu';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 import {
   StyleSheet,
   Text,
   View,
   FlatList,
-  ImageBackground,
-  TouchableOpacity,
   Dimensions,
   Linking,
   Image,
-  Alert,
-  CameraRoll,
   LayoutAnimation,
-  ScrollView
+  ScrollView,
+  Button
 } from 'react-native';
 import {
   Icon,
   Container,
-  Content,
-  Right,
   Title,
   Subtitle,
-  Button,
   Body,
   CardItem,
   Card,
-  Left,
   Row,
-  Col,
-  ActionSheet
+  Col
 } from 'native-base';
 import axios from 'axios';
 import moment from 'moment';
@@ -93,6 +85,10 @@ export default class PoemsList extends Component {
       update: { type: LayoutAnimation.Types.easeInEaseOut }
     });
   }
+  postPoem = () => {
+    console.log(this.props.navigation);
+    this.props.navigation.goBack();
+  };
   Report = item => {
     const repotedPoem = {
       name: item.name,
@@ -112,6 +108,28 @@ export default class PoemsList extends Component {
       })
     );
   }
+  _renderHeader = () => (
+    <View style={{ width: screenWidth, paddingTop: 150 }}>
+      <Image
+        style={{
+          width: '50%',
+          alignSelf: 'center',
+          opacity: 0.5
+        }}
+        resizeMode={'contain'}
+        source={require('../assets/SwipeRight.gif')}
+      />
+      <Text
+        style={{
+          fontFamily: 'Proxima Nova Alt',
+          fontSize: 20,
+          textAlign: 'center'
+        }}
+      >
+        Swipe Right
+      </Text>
+    </View>
+  );
   snapshot = refname => () => {
     captureRef(this[refname], this.state.value)
       .then(res =>
@@ -147,7 +165,11 @@ export default class PoemsList extends Component {
             subject: 'Check out this photo!'
           };
           Share.open(shareOptions)
-            .then(res => console.log('res:', res))
+            .then(res =>
+              alert('Poem Saved.').then(
+                this.setState({ isModalVisible: false })
+              )
+            )
             .catch(err => console.log('err', err));
         });
         this.setState({ meter: true });
@@ -192,6 +214,7 @@ export default class PoemsList extends Component {
                 maxToRenderPerBatch={1}
                 showsVerticalScrollIndicator={false}
                 showsHorizontalScrollIndicator={false}
+                ListHeaderComponent={this._renderHeader}
                 data={this.state.poems}
                 horizontal={true}
                 collapsable={false}

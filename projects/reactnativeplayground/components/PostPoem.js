@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {
   Text,
-  ImageBackground,
-  Image,
   TouchableOpacity,
   StyleSheet,
   AsyncStorage,
@@ -14,7 +12,6 @@ import {
 } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import {
-  Container,
   Content,
   Item,
   Input,
@@ -42,20 +39,30 @@ export default class PostPoem extends Component {
     }
   }
   static navigationOptions = {
-    headerStyle: { height: 80, backgroundColor: '#000' },
-    headerTintColor: 'white',
+    headerStyle: {
+      height: 80,
+      elevation: 0, //remove shadow on Android
+      shadowOpacity: 0, //remove shadow on iOS
+      shadowColor: '#000',
+      shadowOffset: { width: 0, height: 1 },
+      shadowOpacity: 0.2,
+      borderRadius: 5,
+      backgroundColor: '#fff',
+      paddingBottom: 5
+    },
+    headerTintColor: 'black',
     headerTitle: (
       <View style={{ width: '100%' }}>
         <Title
-          style={{ color: '#fff', fontFamily: 'Streamster', fontSize: 30 }}
+          style={{ fontFamily: 'Streamster', fontSize: 35, color: '#000' }}
         >
           Dis Net Jy
         </Title>
         <Subtitle
           style={{
-            color: '#fff',
             fontFamily: 'Proxima Nova Alt',
-            fontSize: 16
+            fontSize: 16,
+            color: '#000'
           }}
         >
           KLYNTJI
@@ -97,29 +104,25 @@ export default class PostPoem extends Component {
       body: '',
       handle: ''
     });
-    // alert('Saved');
-  };
-  handleText = () => {
-    alert('asdasd');
   };
   Clicked = () => {
-    alert('Clicky');
-    // const hand = this.state.handle;
-    // const res = hand.replace('@', '');
-    // const newPoem = {
-    //   name: this.state.name,
-    //   body: this.state.body,
-    //   handle: res
-    // };
-    // axios.post(`http://www.disnetjy.com/api/poems`, newPoem).then(res => {
-    //   console.log(res);
-    //   console.log(res.data);
-    //   this.setState({
-    //     name: '',
-    //     body: '',
-    //     handle: ''
-    //   });
-    // });
+    const hand = this.state.handle;
+    const res = hand.replace('@', '');
+    const newPoem = {
+      name: this.state.name,
+      body: this.state.body,
+      handle: res
+    };
+    axios.post(`http://www.disnetjy.com/api/poems`, newPoem).then(res => {
+      console.log(res);
+      console.log(res.data);
+      this.setState({
+        name: '',
+        body: '',
+        handle: ''
+      });
+    });
+    alert('Poem Posted');
   };
   removeFromLocal = async poem => {
     await AsyncStorage.removeItem(poem[0]);
@@ -357,6 +360,7 @@ const styles = StyleSheet.create({
     borderColor: '#d6d7da',
     shadowOpacity: 0,
     borderRadius: 5,
-    flex: 1
+    flex: 1,
+    marginBottom: 20
   }
 });
