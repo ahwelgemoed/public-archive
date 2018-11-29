@@ -360,6 +360,7 @@ const styles = StyleSheet.create({
     borderColor: '#d6d7da',
     shadowOpacity: 0,
     borderRadius: 5,
-    flex: 1
+    flex: 1,
+    marginBottom: 20
   }
 });

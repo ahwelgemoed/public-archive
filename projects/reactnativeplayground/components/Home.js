@@ -218,7 +218,7 @@ export default class Home extends Component {
               </Col>
             </Row>
             <Row style={{ paddingTop: 20, paddingBottom: 40 }}>
-              <Col style={{}}>
+              {/* <Col style={{}}>
                 <Button
                   iconLeft
                   style={{
@@ -239,7 +239,7 @@ export default class Home extends Component {
                   </Left>
                   <Text style={fontStyles}>REPOT BUG</Text>
                 </Button>
-              </Col>
+              </Col> */}
               {/*   <Col>
                 <Button
                   iconRight

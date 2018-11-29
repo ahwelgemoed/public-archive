@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Icon, Button } from 'native-base';
+import { Icon, Button, Col, Row } from 'native-base';
 import { Text, View, TouchableOpacity } from 'react-native';
 import Modal from 'react-native-modal';
 export default class ModalMenu extends Component {
@@ -39,62 +39,62 @@ export default class ModalMenu extends Component {
               >
                 Options
               </Text>
-              <Button
-                full
-                style={{
-                  height: 70,
-                  fontFamily: 'Lora-Regular',
-                  shadowColor: '#000',
-                  shadowOffset: { width: 0, height: 1 },
-                  shadowOpacity: 0.2,
-                  borderRadius: 5,
-                  backgroundColor: '#fff',
-                  marginBottom: 20,
-                  borderWidth: 2,
-                  borderColor: '#000'
-                }}
-                onPress={this.props.share}
-              >
-                <Text
-                  style={{
-                    fontFamily: 'Proxima Nova Alt',
-                    fontSize: 20,
-                    textAlign: 'left'
-                    // color: '#d7eff1'
-                  }}
-                >
-                  Save/Share
-                </Text>
-              </Button>
-
-              <Button
-                full
-                style={{
-                  height: 70,
-                  fontFamily: 'Lora-Regular',
-                  shadowColor: '#000',
-                  shadowOffset: { width: 0, height: 1 },
-                  shadowOpacity: 0.2,
-                  borderRadius: 5,
-                  borderWidth: 2,
-                  borderColor: '#000',
-                  backgroundColor: '#fff',
-                  marginBottom: 20,
-                  color: '#d7eff1'
-                }}
-                onPress={this.props.report}
-              >
-                <Text
-                  style={{
-                    fontFamily: 'Proxima Nova Alt',
-                    fontSize: 20,
-                    textAlign: 'left'
-                    // color: '#d7eff1'
-                  }}
-                >
-                  Report
-                </Text>
-              </Button>
+              <Row>
+                <Col>
+                  <Button
+                    full
+                    style={{
+                      marginRight: 10,
+                      height: 70,
+                      fontFamily: 'Lora-Regular',
+                      shadowColor: '#000',
+                      shadowOffset: { width: 0, height: 1 },
+                      shadowOpacity: 0.2,
+                      borderRadius: 5,
+                      backgroundColor: '#fff'
+                    }}
+                    onPress={this.props.share}
+                  >
+                    <Text
+                      style={{
+                        fontFamily: 'Proxima Nova Alt',
+                        fontSize: 20,
+                        textAlign: 'left'
+                        // color: '#d7eff1'
+                      }}
+                    >
+                      Save/Share
+                    </Text>
+                  </Button>
+                </Col>
+                <Col>
+                  <Button
+                    full
+                    style={{
+                      marginLeft: 10,
+                      height: 70,
+                      fontFamily: 'Lora-Regular',
+                      shadowColor: '#000',
+                      shadowOffset: { width: 0, height: 1 },
+                      shadowOpacity: 0.2,
+                      borderRadius: 5,
+                      backgroundColor: '#fff'
+                    }}
+                    onPress={this.props.report}
+                  >
+                    <Text
+                      style={{
+                        fontFamily: 'Proxima Nova Alt',
+                        fontSize: 20,
+                        textAlign: 'left'
+                        // color: '#d7eff1'
+                      }}
+                    >
+                      Report
+                    </Text>
+                  </Button>
+                </Col>
+              </Row>
               <Button
                 full
                 style={{

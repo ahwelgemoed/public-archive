@@ -113,7 +113,8 @@ export default class PoemsList extends Component {
       <Image
         style={{
           width: '50%',
-          alignSelf: 'center'
+          alignSelf: 'center',
+          opacity: 0.5
         }}
         resizeMode={'contain'}
         source={require('../assets/SwipeRight.gif')}
@@ -164,7 +165,11 @@ export default class PoemsList extends Component {
             subject: 'Check out this photo!'
           };
           Share.open(shareOptions)
-            .then(res => console.log('res:', res))
+            .then(res =>
+              alert('Poem Saved.').then(
+                this.setState({ isModalVisible: false })
+              )
+            )
             .catch(err => console.log('err', err));
         });
         this.setState({ meter: true });
