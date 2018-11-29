@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 import { withNavigation } from 'react-navigation';
-import { ImageBackground, View, Linking } from 'react-native';
+import Animation from 'lottie-react-native';
+import ani from '../assets/ani/favorite_black.json';
+import {
+  StyleSheet,
+  ImageBackground,
+  View,
+  Linking,
+  LayoutAnimation,
+  ScrollView
+} from 'react-native';
 import {
   Container,
   Content,
@@ -17,22 +26,45 @@ import {
 } from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 
+const BGColor = ['#e8f3eb', '#fde7dc', '#d7eff1', '#9EBEC1', '#AED9E0'];
+const BGColorRand = BGColor[Math.floor(Math.random() * BGColor.length)];
 export default class Home extends Component {
+  componentDidMount() {
+    LayoutAnimation.configureNext({
+      duration: 500,
+      create: {
+        type: LayoutAnimation.Types.easeInEaseOut,
+        property: LayoutAnimation.Properties.opacity
+      },
+      update: { type: LayoutAnimation.Types.easeInEaseOut }
+    });
+  }
   static navigationOptions = {
-    headerStyle: { height: 80, backgroundColor: '#000' },
+    headerStyle: {
+      height: 80,
+      borderBottom: 'none',
+      elevation: 0, //remove shadow on Android
+      shadowOpacity: 0, //remove shadow on iOS
+      shadowColor: '#000',
+      shadowOffset: { width: 0, height: 1 },
+      shadowOpacity: 0.2,
+      borderRadius: 5,
+      backgroundColor: '#fff',
+      paddingBottom: 5
+    },
 
     headerTitle: (
       <View style={{ width: '100%' }}>
         <Title
-          style={{ color: '#fff', fontFamily: 'Streamster', fontSize: 30 }}
+          style={{ fontFamily: 'Streamster', fontSize: 35, color: '#000' }}
         >
           Dis Net Jy
         </Title>
         <Subtitle
           style={{
-            color: '#fff',
             fontFamily: 'Proxima Nova Alt',
-            fontSize: 16
+            fontSize: 16,
+            color: '#000'
           }}
         >
           KLYNTJI
@@ -44,49 +76,59 @@ export default class Home extends Component {
     const { buttonStyle, fontStyle, fontStyles } = styles;
     return (
       <Container>
-        {/* <ImageBackground
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            width: '100%',
-            height: 150
-          }}
-          source={require('../assets/Header.gif')}
-        /> */}
         <Content style={{ padding: 20 }}>
           <Grid>
             <Row>
-              <Col>
-                <Card>
-                  <CardItem header>
-                    <Text
-                      style={{
-                        fontFamily: 'Montserrat-SemiBold',
-                        fontSize: 20
-                      }}
-                    >
-                      The Idea
-                    </Text>
-                  </CardItem>
-                  <CardItem bordered>
-                    <Body>
-                      <Text style={{ fontFamily: 'Lato-Light' }}>
-                        A simple space to add a Thought/Poem or anything really,
-                        It’s anonymous and very open to abuse.{' '}
-                      </Text>
-                      <Text style={{ fontFamily: 'Lato-Light' }}>
-                        It can't be deleted or edited. Use any Language or
-                        Emoji.
-                      </Text>
-                      <Text style={{ fontFamily: 'Lato-Light' }}>
-                        We ask that you post anything you want as long as it's
-                        true, make it short, make it long, just fucking make it.
-                        You can add your Instagram handle if you want to be
-                        found, or leave it blank.
-                      </Text>
-                    </Body>
-                  </CardItem>
-                </Card>
+              <Col
+                style={{
+                  marginRight: 20,
+                  paddingLeft: 3,
+                  paddingBottom: 5
+                }}
+              >
+                <Text
+                  style={{
+                    marginBottom: 10,
+                    fontFamily: 'Proxima Nova Alt',
+                    fontSize: 30,
+                    textAlign: 'left',
+                    marginTop: 20
+                  }}
+                >
+                  THE IDEA
+                </Text>
+
+                <Text
+                  style={{
+                    fontFamily: 'Lato-Light',
+                    fontSize: 18,
+                    lineHeight: 25
+                  }}
+                >
+                  A simple space to add a Thought/Poem or anything really, It’s
+                  anonymous and very open to abuse.{' '}
+                </Text>
+                <Text
+                  style={{
+                    fontFamily: 'Lato-Light',
+                    fontSize: 18,
+                    lineHeight: 25
+                  }}
+                >
+                  It can't be deleted or edited. Use any Language or Emoji.
+                </Text>
+                <Text
+                  style={{
+                    fontFamily: 'Lato-Light',
+                    fontSize: 18,
+                    lineHeight: 25
+                  }}
+                >
+                  We ask that you post anything you want as long as it's true,
+                  make it short, make it long, just fucking make it. You can add
+                  your Instagram handle if you want to be found, or leave it
+                  blank.
+                </Text>
               </Col>
             </Row>
             <Row style={{ paddingTop: 20 }}>
@@ -130,7 +172,9 @@ export default class Home extends Component {
             <Row style={{ paddingTop: 20 }}>
               <Col style={{ paddingRight: 20 }}>
                 <Button
-                  onPress={() => Linking.openURL(`https://klyntji.com/`)}
+                  onPress={() => {
+                    Linking.openURL(`https://klyntji.com/`);
+                  }}
                   iconLeft
                   style={buttonStyle}
                   block

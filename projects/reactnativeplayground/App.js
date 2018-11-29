@@ -14,7 +14,7 @@ export default class App extends Component<Props> {
 }
 const AppNavigator = StackNavigator({
   Home: { screen: Home },
-  PostPoem: { screen: PostPoem },
-  PoemsList: { screen: PoemsList }
+  PoemsList: { screen: PoemsList },
+  PostPoem: { screen: PostPoem }
 });
 AppRegistry.registerComponent('App', () => App);

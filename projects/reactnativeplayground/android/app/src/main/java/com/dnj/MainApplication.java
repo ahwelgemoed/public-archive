@@ -3,6 +3,9 @@ package com.dnj;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.RNFetchBlob.RNFetchBlobPackage;
+import cl.json.RNSharePackage;
+import com.airbnb.android.react.lottie.LottiePackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import fr.greweb.reactnativeviewshot.RNViewShotPackage;
 import com.facebook.react.ReactNativeHost;
@@ -25,6 +28,9 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNFetchBlobPackage(),
+            new RNSharePackage(),
+            new LottiePackage(),
             new VectorIconsPackage(),
             new RNViewShotPackage()
       );
