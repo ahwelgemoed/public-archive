@@ -33,21 +33,11 @@ export default class ModalMenu extends Component {
                 style={{
                   fontFamily: 'Proxima Nova Alt',
                   fontSize: 30,
-                  textAlign: 'left'
-                  // paddingBottom: 30
-                }}
-              >
-                Options for:
-              </Text>
-              <Text
-                style={{
-                  fontFamily: 'Proxima Nova Alt',
-                  fontSize: 25,
                   textAlign: 'left',
                   paddingBottom: 30
                 }}
               >
-                {this.props.poem.name}
+                Options
               </Text>
               <Button
                 full
@@ -61,7 +51,7 @@ export default class ModalMenu extends Component {
                   backgroundColor: '#fff',
                   marginBottom: 20,
                   borderWidth: 2,
-                  borderColor: '#d7eff1'
+                  borderColor: '#000'
                 }}
                 onPress={this.props.share}
               >
@@ -87,7 +77,7 @@ export default class ModalMenu extends Component {
                   shadowOpacity: 0.2,
                   borderRadius: 5,
                   borderWidth: 2,
-                  borderColor: '#d7eff1',
+                  borderColor: '#000',
                   backgroundColor: '#fff',
                   marginBottom: 20,
                   color: '#d7eff1'
@@ -114,9 +104,10 @@ export default class ModalMenu extends Component {
                   shadowOffset: { width: 0, height: 1 },
                   shadowOpacity: 0.2,
                   borderRadius: 5,
-                  backgroundColor: '#e8f3eb',
+                  backgroundColor: '#000',
                   borderWidth: 2,
-                  borderColor: '#e8f3eb'
+                  borderColor: '#000',
+                  color: '#fff'
                 }}
                 onPress={this._toggleModal}
               >
@@ -124,7 +115,8 @@ export default class ModalMenu extends Component {
                   style={{
                     fontFamily: 'Proxima Nova Alt',
                     fontSize: 20,
-                    textAlign: 'left'
+                    textAlign: 'left',
+                    color: '#fff'
                   }}
                 >
                   Close

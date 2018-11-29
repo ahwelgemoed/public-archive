@@ -31,7 +31,7 @@ const BGColorRand = BGColor[Math.floor(Math.random() * BGColor.length)];
 export default class Home extends Component {
   componentDidMount() {
     LayoutAnimation.configureNext({
-      duration: 500,
+      duration: 50,
       create: {
         type: LayoutAnimation.Types.easeInEaseOut,
         property: LayoutAnimation.Properties.opacity
@@ -156,7 +156,11 @@ export default class Home extends Component {
                   style={buttonStyle}
                   block
                   light
-                  onPress={() => this.props.navigation.navigate('PostPoem')}
+                  onPress={() =>
+                    this.props.navigation.navigate('PostPoem', {
+                      navigation: this.props.navigation
+                    })
+                  }
                 >
                   <Text style={fontStyle}>POST</Text>
                   <Right style={{ paddingRight: 20 }}>
@@ -191,7 +195,17 @@ export default class Home extends Component {
                 </Button>
               </Col>
               <Col>
-                <Button iconRight style={buttonStyle} block light>
+                <Button
+                  iconRight
+                  style={buttonStyle}
+                  block
+                  light
+                  onPress={() =>
+                    this.props.navigation.navigate('About', {
+                      navigation: this.props.navigation
+                    })
+                  }
+                >
                   <Text style={fontStyle}>ABOUT</Text>
                   <Right style={{ paddingRight: 20 }}>
                     <Icon
@@ -203,8 +217,8 @@ export default class Home extends Component {
                 </Button>
               </Col>
             </Row>
-            <Row style={{ paddingTop: 20 }}>
-              <Col style={{ paddingRight: 20 }}>
+            <Row style={{ paddingTop: 20, paddingBottom: 40 }}>
+              <Col style={{}}>
                 <Button
                   iconLeft
                   style={{
@@ -226,7 +240,7 @@ export default class Home extends Component {
                   <Text style={fontStyles}>REPOT BUG</Text>
                 </Button>
               </Col>
-              <Col>
+              {/*   <Col>
                 <Button
                   iconRight
                   style={{
@@ -244,7 +258,7 @@ export default class Home extends Component {
                     <Icon type="FontAwesome" name="question" />
                   </Right>
                 </Button>
-              </Col>
+              </Col> */}
             </Row>
           </Grid>
         </Content>
