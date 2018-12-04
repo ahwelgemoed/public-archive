@@ -3,11 +3,6 @@ import { Icon, Button, Col, Row } from 'native-base';
 import { Text, View, TouchableOpacity } from 'react-native';
 import Modal from 'react-native-modal';
 export default class ModalMenu extends Component {
-  state = {
-    isModalVisible: false
-  };
-  _toggleModal = () =>
-    this.setState({ isModalVisible: !this.state.isModalVisible });
   render() {
     return (
       <View>
@@ -19,7 +14,7 @@ export default class ModalMenu extends Component {
               marginBottom: '30%',
               borderRadius: 10
             }}
-            isVisible={this.state.isModalVisible}
+            isVisible={this.props.isModalVisible}
           >
             <View
               style={{
@@ -109,7 +104,7 @@ export default class ModalMenu extends Component {
                   borderColor: '#000',
                   color: '#fff'
                 }}
-                onPress={this._toggleModal}
+                onPress={this.props.open}
               >
                 <Text
                   style={{
@@ -130,7 +125,7 @@ export default class ModalMenu extends Component {
           iconLeft
           block
           light
-          onPress={this._toggleModal}
+          onPress={this.props.open}
         >
           <Text>
             <Icon

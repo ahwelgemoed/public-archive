@@ -25,7 +25,8 @@ import {
   CardItem,
   Card,
   Row,
-  Col
+  Col,
+  Toast
 } from 'native-base';
 import axios from 'axios';
 import moment from 'moment';
@@ -75,6 +76,8 @@ export default class PoemsList extends Component {
       snapshotContentContainer: false
     }
   };
+  _toggleModal = () =>
+    this.setState({ isModalVisible: !this.state.isModalVisible });
   componentWillUpdate() {
     LayoutAnimation.configureNext({
       duration: 50,
@@ -97,8 +100,16 @@ export default class PoemsList extends Component {
     };
     axios
       .post(`http://www.disnetjy.com/api/send`, repotedPoem)
-      .then(res => res.data);
-    alert('Poem Reported, we will review.');
+      .then(res => res.data)
+      .then(this.setState({ isModalVisible: false }))
+      .then(
+        Toast.show({
+          text: 'We will review if the Poem violates our policies',
+          buttonText: 'Okay',
+          position: 'bottom',
+          type: 'danger'
+        })
+      );
   };
   componentWillMount() {
     axios.get(`http://www.disnetjy.com/api/poems`).then(res =>
@@ -166,9 +177,11 @@ export default class PoemsList extends Component {
           };
           Share.open(shareOptions)
             .then(res =>
-              alert('Poem Saved.').then(
-                this.setState({ isModalVisible: false })
-              )
+              Toast.show({
+                text: 'Poem Saved',
+                buttonText: 'Okay',
+                position: 'bottom'
+              }).then(this.setState({ isModalVisible: false }))
             )
             .catch(err => console.log('err', err));
         });
@@ -264,7 +277,8 @@ export default class PoemsList extends Component {
                             </Col>
                             <Col style={{ width: 20 }}>
                               <ModalMenu
-                                poem={item}
+                                open={this._toggleModal}
+                                isModalVisible={this.state.isModalVisible}
                                 report={this.Report.bind(this, item)}
                                 share={this.snapshot(`textInput${item._id}`)}
                               />

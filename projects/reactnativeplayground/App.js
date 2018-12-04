@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Root } from 'native-base';
 import AppIntroSlider from 'react-native-app-intro-slider';
 // import AppNavigator from './AppNavigator';
 import {
@@ -26,11 +27,11 @@ export default class App extends Component {
     await this.setState({ showRealApp: true });
   };
   render() {
-    if (this.state.showRealApp) {
-      return <AppNavigator />;
-    } else {
-      return <AppIntroSlider slides={slides} onDone={this._onDone} />;
-    }
+    return (
+      <Root>
+        <AppNavigator />
+      </Root>
+    );
   }
 }
 const AppNavigator = StackNavigator({
