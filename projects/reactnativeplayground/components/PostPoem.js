@@ -8,7 +8,8 @@ import {
   View,
   Alert,
   Platform,
-  LayoutAnimation
+  LayoutAnimation,
+  UIManager
 } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import {
@@ -142,13 +143,13 @@ export default class PostPoem extends Component {
     };
     axios
       .post(`http://localhost:3000/api/poems`, newPoem)
-      .then(res => {
-        this.setState({
-          name: '',
-          body: '',
-          handle: ''
-        });
-      })
+      // .then(res => {
+      //   this.setState({
+      //     name: '',
+      //     body: '',
+      //     handle: ''
+      //   });
+      // })
       .then(
         Toast.show({
           text: 'Poem Posted!',

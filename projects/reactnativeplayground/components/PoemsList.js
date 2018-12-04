@@ -4,6 +4,7 @@ import Share from 'react-native-share';
 import RNFetchBlob from 'rn-fetch-blob';
 import ModalMenu from './ModalMenu';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
+
 import {
   StyleSheet,
   Text,
@@ -14,7 +15,8 @@ import {
   Image,
   LayoutAnimation,
   ScrollView,
-  Button
+  Platform,
+  UIManager
 } from 'react-native';
 import {
   Icon,
@@ -32,6 +34,12 @@ import axios from 'axios';
 import moment from 'moment';
 
 export default class PoemsList extends Component {
+  constructor() {
+    super();
+    if (Platform.OS === 'android') {
+      UIManager.setLayoutAnimationEnabledExperimental(true);
+    }
+  }
   static navigationOptions = {
     headerStyle: {
       height: 80,
@@ -86,6 +94,9 @@ export default class PoemsList extends Component {
       },
       update: { type: LayoutAnimation.Types.easeInEaseOut }
     });
+
+    UIManager.setLayoutAnimationEnabledExperimental &&
+      UIManager.setLayoutAnimationEnabledExperimental(true);
   }
   postPoem = () => {
     console.log(this.props.navigation);
