@@ -90,7 +90,7 @@ export default class About extends Component {
                     lineHeight: 25
                   }}
                 >
-                  "Dis Net Jy" was stated middle 2018 by me, A.H. Welgemoed,
+                  "Dis Net Jy" was started in middle 2018 by me, A.H. Welgemoed,
                   It's just a simple place to post and read poetry. What has
                   happened here already feels very magical, now with the App I
                   hope we can make it even more.
@@ -107,6 +107,18 @@ export default class About extends Component {
                   <Icon
                     style={{ fontSize: 20 }}
                     name="instagram"
+                    type="FontAwesome"
+                  />
+                </Right>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={{ paddingBottom: 50 }}
+                onPress={() => Linking.openURL(`http://disnetjy.klyntji.com//`)}
+              >
+                <Right style={{ paddingRight: 20 }}>
+                  <Icon
+                    style={{ fontSize: 20 }}
+                    name="desktop"
                     type="FontAwesome"
                   />
                 </Right>
@@ -166,6 +178,55 @@ export default class About extends Component {
               <TouchableOpacity
                 style={{ paddingBottom: 50 }}
                 onPress={() => Linking.openURL(`https://klyntji.com/`)}
+              >
+                <Right style={{ paddingRight: 20 }}>
+                  <Icon
+                    style={{ fontSize: 20 }}
+                    name="desktop"
+                    type="FontAwesome"
+                  />
+                </Right>
+              </TouchableOpacity>
+            </Row>
+            <Row>
+              <Col
+                style={{
+                  marginRight: 20,
+                  paddingLeft: 3,
+                  paddingBottom: 5
+                }}
+              >
+                <Text
+                  style={{
+                    marginBottom: 10,
+                    fontFamily: 'Proxima Nova Alt',
+                    fontSize: 30,
+                    textAlign: 'left',
+                    marginTop: 20
+                  }}
+                >
+                  Terms and Conditions
+                </Text>
+
+                <Text
+                  style={{
+                    fontFamily: 'Lato-Light',
+                    fontSize: 18,
+                    lineHeight: 25,
+                    marginBottom: 20
+                  }}
+                >
+                  by using the app you agree to the same T&C's as the Website.
+                  Follow the Link To Read.
+                </Text>
+              </Col>
+            </Row>
+            <Row>
+              <TouchableOpacity
+                style={{ paddingBottom: 50 }}
+                onPress={() =>
+                  Linking.openURL(`http://disnetjy.klyntji.com/tandc`)
+                }
               >
                 <Right style={{ paddingRight: 20 }}>
                   <Icon

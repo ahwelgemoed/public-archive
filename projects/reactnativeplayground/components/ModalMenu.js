@@ -6,6 +6,7 @@ export default class ModalMenu extends Component {
   state = {
     isModalVisible: false
   };
+
   _toggleModal = () =>
     this.setState({ isModalVisible: !this.state.isModalVisible });
   render() {

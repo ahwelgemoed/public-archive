@@ -17,6 +17,7 @@
     "react": "16.6.0-alpha.8af6728",
     "react-native": "0.57.4",
     "react-native-actionsheet": "^2.4.2",
+    "react-native-app-intro-slider": "^1.0.1",
     "react-native-keyboard-aware-scroll-view": "^0.7.4",
     "react-native-modal": "^7.0.0",
     "react-native-permissions": "^1.1.1",

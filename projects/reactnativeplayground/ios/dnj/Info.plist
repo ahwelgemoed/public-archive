@@ -2,26 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSSpeechRecognitionUsageDescription </key>
-	<string></string>
-	<key>NSMotionUsageDescription</key>
-	<string></string>
-	<key>NSAppleMusicUsageDescription</key>
-	<string></string>
-	<key>NSBluetoothPeripheralUsageDescription </key>
-	<string></string>
-	<key>NSCalendarsUsageDescription</key>
-	<string></string>
-	<key>NSHumanReadableCopyright</key>
-	<string></string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>dnj</string>
+	<string>Dis Net Jy</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleGetInfoString</key>
 	<string>LSApplicationQueriesSchemes</string>
+	<key>CFBundleIconFile</key>
+	<string></string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -31,11 +21,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.1</string>
+	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>0.1</string>
+	<string>1.6</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>LSApplicationQueriesSchemes</key>
@@ -55,20 +45,36 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Dis Net Jy would like to use Music</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>This will allow you to use your bluetooth to play music</string>
+	<key>NSBluetoothPeripheralUsageDescription </key>
+	<string>Dis Net Jy would like to acces Bluetooth to Connect</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>This will allow you to let us add calendar</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Dis Net Jy</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>...</string>
+	<string>Dis Net Jy would like to use Location</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>...</string>
+	<string>Dis Net Jy would like to use Location</string>
 	<key>NSLocationUsageDescription</key>
-	<string>...</string>
+	<string>Dis Net Jy would like to use Location</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>...</string>
+	<string>Dis Net Jy would like to use Location</string>
 	<key>NSMainNibFile</key>
 	<string>LaunchScreen</string>
+	<key>NSMotionUsageDescription</key>
+	<string>Dis Net Jy would like to detect Motion</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>dis net Jy would like to save a poem</string>
+	<string>Dis Net Jy would like to save a poem</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>dis net Jy would like to save a poem</string>
+	<string>Dis Net Jy would like to save a poem</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Dis Net Jy would like to use Speach</string>
+	<key>NSSpeechRecognitionUsageDescription </key>
+	<string>Dis Net Jy would like to use Speach</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Entypo.ttf</string>
@@ -104,6 +110,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIRequiresFullScreen</key>
+	<true/>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UISupportedInterfaceOrientations</key>

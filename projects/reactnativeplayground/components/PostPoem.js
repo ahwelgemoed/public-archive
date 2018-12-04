@@ -26,7 +26,8 @@ import {
   CardItem,
   Body,
   Title,
-  Subtitle
+  Subtitle,
+  Toast
 } from 'native-base';
 
 export default class PostPoem extends Component {
@@ -90,7 +91,12 @@ export default class PostPoem extends Component {
   saveData = async () => {
     const { name, body, handle } = this.state;
     if (!name) {
-      return alert('Please Add Name before Saving');
+      return Toast.show({
+        text: 'Please add unique Name before Saving!',
+        buttonText: 'Okay',
+        position: 'bottom',
+        type: 'danger'
+      });
     }
     let poem = {
       name,
@@ -104,8 +110,29 @@ export default class PostPoem extends Component {
       body: '',
       handle: ''
     });
+    await Toast.show({
+      text: 'Saved To Offline Drafts!',
+      buttonText: 'Okay',
+      position: 'bottom'
+    });
   };
   Clicked = () => {
+    if (this.state.name == '') {
+      return Toast.show({
+        text: `Please Enter a Poem Name`,
+        buttonText: 'Okay',
+        position: 'bottom',
+        type: 'danger'
+      });
+    }
+    if (this.state.body == '') {
+      return Toast.show({
+        text: `Please Enter a Poem`,
+        buttonText: 'Okay',
+        position: 'bottom',
+        type: 'danger'
+      });
+    }
     const hand = this.state.handle;
     const res = hand.replace('@', '');
     const newPoem = {
@@ -113,16 +140,30 @@ export default class PostPoem extends Component {
       body: this.state.body,
       handle: res
     };
-    axios.post(`http://www.disnetjy.com/api/poems`, newPoem).then(res => {
-      console.log(res);
-      console.log(res.data);
-      this.setState({
-        name: '',
-        body: '',
-        handle: ''
+    axios
+      .post(`http://localhost:3000/api/poems`, newPoem)
+      .then(res => {
+        this.setState({
+          name: '',
+          body: '',
+          handle: ''
+        });
+      })
+      .then(
+        Toast.show({
+          text: 'Poem Posted!',
+          buttonText: 'Okay',
+          position: 'bottom'
+        })
+      )
+      .then(() => this.props.navigation.navigate('PoemsList'))
+      .catch(err => {
+        Toast.show({
+          text: 'Poem Error!',
+          buttonText: 'Okay',
+          position: 'bottom'
+        });
       });
-    });
-    alert('Poem Posted');
   };
   removeFromLocal = async poem => {
     await AsyncStorage.removeItem(poem[0]);
@@ -247,7 +288,17 @@ export default class PostPoem extends Component {
           }}
           showsHorizontalScrollIndicator={false}
         >
-          <Text style={styles.name}>Post a Poem</Text>
+          <Text
+            style={{
+              // marginBottom: 10,
+              fontFamily: 'Proxima Nova Alt',
+              fontSize: 30,
+              textAlign: 'left',
+              marginTop: 10
+            }}
+          >
+            Post a Poem
+          </Text>
           <Item>
             <Input
               name="name"
@@ -318,7 +369,17 @@ export default class PostPoem extends Component {
             </Col>
           </Row>
           <Row style={{ paddingTop: 50 }}>
-            <Text style={styles.name}>Poems in Draft</Text>
+            <Text
+              style={{
+                marginBottom: 10,
+                fontFamily: 'Proxima Nova Alt',
+                fontSize: 30,
+                textAlign: 'left',
+                marginTop: 10
+              }}
+            >
+              Poems in Draft
+            </Text>
           </Row>
           <Row style={{ paddingTop: 20 }}>{this.welcome()}</Row>
         </Content>
