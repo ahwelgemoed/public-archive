@@ -76,8 +76,7 @@ export default class PoemsList extends Component {
       snapshotContentContainer: false
     }
   };
-  _toggleModal = () =>
-    this.setState({ isModalVisible: !this.state.isModalVisible });
+
   componentWillUpdate() {
     LayoutAnimation.configureNext({
       duration: 50,
@@ -177,11 +176,9 @@ export default class PoemsList extends Component {
           };
           Share.open(shareOptions)
             .then(res =>
-              Toast.show({
-                text: 'Poem Saved',
-                buttonText: 'Okay',
-                position: 'bottom'
-              }).then(this.setState({ isModalVisible: false }))
+              alert('Poem Saved.').then(
+                this.setState({ isModalVisible: false })
+              )
             )
             .catch(err => console.log('err', err));
         });
