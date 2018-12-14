@@ -87,7 +87,8 @@ export default class About extends Component {
                   style={{
                     fontFamily: 'Lato-Light',
                     fontSize: 18,
-                    lineHeight: 25
+                    lineHeight: 25,
+                    marginBottom: 20
                   }}
                 >
                   "Dis Net Jy" was started in middle 2018 by me, A.H. Welgemoed,
@@ -113,7 +114,7 @@ export default class About extends Component {
               </TouchableOpacity>
               <TouchableOpacity
                 style={{ paddingBottom: 50 }}
-                onPress={() => Linking.openURL(`http://disnetjy.klyntji.com//`)}
+                onPress={() => Linking.openURL(`http://disnetjy.klyntji.com/`)}
               >
                 <Right style={{ paddingRight: 20 }}>
                   <Icon
@@ -188,6 +189,168 @@ export default class About extends Component {
                 </Right>
               </TouchableOpacity>
             </Row>
+            <Row>
+              <Col
+                style={{
+                  marginRight: 20,
+                  paddingLeft: 3,
+                  paddingBottom: 5
+                }}
+              >
+                <Text
+                  style={{
+                    marginBottom: 10,
+                    fontFamily: 'Proxima Nova Alt',
+                    fontSize: 30,
+                    textAlign: 'left',
+                    marginTop: 20
+                  }}
+                >
+                  Thanks to :
+                </Text>
+
+                <Text
+                  style={{
+                    fontFamily: 'Lato-Light',
+                    fontSize: 18,
+                    lineHeight: 25,
+                    marginBottom: 20
+                  }}
+                >
+                  A huge thanks to all our Beta testers for making my life
+                  harder 😉
+                </Text>
+              </Col>
+            </Row>
+            <Row style={{ paddingBottom: 30 }}>
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL(`https://www.instagram.com/kerryhugill`)
+                }
+              >
+                <Right style={{ paddingRight: 20 }}>
+                  <Icon
+                    style={{ fontSize: 20 }}
+                    name="instagram"
+                    type="FontAwesome"
+                  />
+                </Right>
+              </TouchableOpacity>
+              <Text
+                style={{
+                  fontFamily: 'Proxima Nova Alt'
+                }}
+                onPress={() =>
+                  Linking.openURL(`https://www.instagram.com/kerryhugill`)
+                }
+              >
+                - Kerry Hugill
+              </Text>
+            </Row>
+
+            <Row style={{ paddingBottom: 30 }}>
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL(`https://www.instagram.com/marleversace`)
+                }
+              >
+                <Right style={{ paddingRight: 20 }}>
+                  <Icon
+                    style={{ fontSize: 20 }}
+                    name="instagram"
+                    type="FontAwesome"
+                  />
+                </Right>
+              </TouchableOpacity>
+              <Text
+                style={{
+                  fontFamily: 'Proxima Nova Alt'
+                }}
+                onPress={() =>
+                  Linking.openURL(`https://www.instagram.com/marleversace`)
+                }
+              >
+                - Marle Visagie
+              </Text>
+            </Row>
+
+            <Row style={{ paddingBottom: 30 }}>
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL(`https://www.instagram.com/almanel_`)
+                }
+              >
+                <Right style={{ paddingRight: 20 }}>
+                  <Icon
+                    style={{ fontSize: 20 }}
+                    name="instagram"
+                    type="FontAwesome"
+                  />
+                </Right>
+              </TouchableOpacity>
+              <Text
+                style={{
+                  fontFamily: 'Proxima Nova Alt'
+                }}
+                onPress={() =>
+                  Linking.openURL(`https://www.instagram.com/almanel_`)
+                }
+              >
+                - Alma Nel
+              </Text>
+            </Row>
+            <Row style={{ paddingBottom: 30 }}>
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL(`https://www.instagram.com/ena_stegmann`)
+                }
+              >
+                <Right style={{ paddingRight: 20 }}>
+                  <Icon
+                    style={{ fontSize: 20 }}
+                    name="instagram"
+                    type="FontAwesome"
+                  />
+                </Right>
+              </TouchableOpacity>
+              <Text
+                style={{
+                  fontFamily: 'Proxima Nova Alt'
+                }}
+                onPress={() =>
+                  Linking.openURL(`https://www.instagram.com/ena_stegmann`)
+                }
+              >
+                - Ena Stegmann
+              </Text>
+            </Row>
+
+            <Row style={{ paddingBottom: 30 }}>
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL(`https://www.instagram.com/francoislct`)
+                }
+              >
+                <Right style={{ paddingRight: 20 }}>
+                  <Icon
+                    style={{ fontSize: 20 }}
+                    name="instagram"
+                    type="FontAwesome"
+                  />
+                </Right>
+              </TouchableOpacity>
+              <Text
+                style={{
+                  fontFamily: 'Proxima Nova Alt'
+                }}
+                onPress={() =>
+                  Linking.openURL(`https://www.instagram.com/francoislct`)
+                }
+              >
+                - Francois Lion-Cachet
+              </Text>
+            </Row>
+
             <Row>
               <Col
                 style={{

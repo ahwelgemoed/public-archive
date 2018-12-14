@@ -8,7 +8,8 @@ import {
   View,
   Alert,
   Platform,
-  LayoutAnimation
+  LayoutAnimation,
+  UIManager
 } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import {
@@ -27,7 +28,8 @@ import {
   Body,
   Title,
   Subtitle,
-  Toast
+  Toast,
+  Label
 } from 'native-base';
 
 export default class PostPoem extends Component {
@@ -79,14 +81,14 @@ export default class PostPoem extends Component {
     showToast: false
   };
   componentWillUpdate() {
-    LayoutAnimation.configureNext({
-      duration: 300,
-      create: {
-        type: LayoutAnimation.Types.easeInEaseOut,
-        property: LayoutAnimation.Properties.opacity
-      },
-      update: { type: LayoutAnimation.Types.easeInEaseOut }
-    });
+    // LayoutAnimation.configureNext({
+    //   duration: 300,
+    //   create: {
+    //     type: LayoutAnimation.Types.easeInEaseOut,
+    //     property: LayoutAnimation.Properties.opacity
+    //   },
+    //   update: { type: LayoutAnimation.Types.easeInEaseOut }
+    // });
   }
   saveData = async () => {
     const { name, body, handle } = this.state;
@@ -141,14 +143,14 @@ export default class PostPoem extends Component {
       handle: res
     };
     axios
-      .post(`http://localhost:3000/api/poems`, newPoem)
-      .then(res => {
-        this.setState({
-          name: '',
-          body: '',
-          handle: ''
-        });
-      })
+      .post(`http://www.disnetjy.com/api/poems`, newPoem)
+      // .then(res => {
+      //   this.setState({
+      //     name: '',
+      //     body: '',
+      //     handle: ''
+      //   });
+      // })
       .then(
         Toast.show({
           text: 'Poem Posted!',
@@ -249,9 +251,9 @@ export default class PostPoem extends Component {
             <CardItem>
               <Body>
                 <Text style={styles.body}>
-                  If you want to save a poem for later. Type it out and Click
-                  DRAFT. It will save it on your Device, so that you can work on
-                  it offline and post it when you feel its.
+                  If you want to save a poem for later, Click DRAFT. It will
+                  save it on your Device, so that you can work on it offline and
+                  post it when you feel its right.
                 </Text>
               </Body>
             </CardItem>
@@ -294,25 +296,27 @@ export default class PostPoem extends Component {
               fontFamily: 'Proxima Nova Alt',
               fontSize: 30,
               textAlign: 'left',
-              marginTop: 10
+              marginTop: 10,
+              paddingBottom: 10
             }}
           >
-            Post a Poem
+            Post a Thought/Poem
           </Text>
-          <Item>
+          <Item floatingLabel>
+            <Label>Title of Thought/Poem</Label>
             <Input
               name="name"
-              placeholder="Title of Thought/Poem"
+              // placeholder="Title of Thought/Poem"
               style={styles.body}
               value={this.state.name}
               onChangeText={name => this.setState({ name })}
             />
           </Item>
-          <Item>
+          <Item style={{ marginLeft: 0 }}>
             <Textarea
               multiline={true}
               placeholder="Thought/Poem"
-              rowSpan={6}
+              rowSpan={5}
               editable={true}
               autogrow={true}
               style={styles.bodys}
@@ -320,6 +324,7 @@ export default class PostPoem extends Component {
               onChangeText={body => this.setState({ body })}
             />
           </Item>
+
           <Item>
             <Input
               name="body"
@@ -394,12 +399,13 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   body: {
-    fontFamily: 'Lato-Light',
+    fontFamily: 'Proxima Nova Alt',
     fontSize: 16
   },
   bodys: {
-    fontFamily: 'Lato-Light',
-    fontSize: 18
+    fontFamily: 'Proxima Nova Alt',
+    fontSize: 18,
+    paddingBottom: 50
   },
   buttonStyle: {
     height: 70,
