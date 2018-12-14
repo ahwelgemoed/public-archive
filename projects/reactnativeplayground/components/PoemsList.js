@@ -345,7 +345,7 @@ const styles = StyleSheet.create({
     color: '#000',
     paddingLeft: 10,
     paddingRight: 10,
-    paddingTop: 30
+    paddingTop: 20
     // shadowColor: '#000',
     // shadowOffset: { width: 0, height: 1 },
     // shadowOpacity: 0.2,
@@ -367,7 +367,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Lato-Light',
     fontSize: 18,
     paddingBottom: 10,
-    paddingTop: 30
+    paddingTop: 10
   },
   icon: {
     fontSize: 14
