@@ -11,8 +11,7 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-            <h1>Hi I'm wrapped in My Provider and Store</h1>
-            Build Something
+            <h1>Leas Portfolio</h1>
           </div>
         </Router>
       </Provider>
