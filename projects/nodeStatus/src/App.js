@@ -1,25 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import ProductionNode from './ProductionNode';
+import OfflineDisplay from './OfflineDisplay';
+import DevNode from './DevNode';
+import { Offline, Online } from 'react-detect-offline';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="">
+        <div className="row">
+          <Offline>
+            <OfflineDisplay />
+          </Offline>
+          <Online>
+            <div className="six columns">
+              <ProductionNode />
+            </div>
+            <div className="six columns">
+              <DevNode />
+            </div>
+          </Online>
+        </div>
       </div>
     );
   }

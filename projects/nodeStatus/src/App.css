@@ -1,33 +1,99 @@
-.App {
-  text-align: center;
+.allGood {
+  height: 100vh;
+  /* width: 50%; */
+  background-image: linear-gradient(to bottom, #96deda 0%, #50c9c3 100%);
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.breaky {
+  height: 100vh;
+  /* width: 50%; */
+  background: linear-gradient(to bottom, #ff723b 0%, #fa8e63 100%);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Aligner {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Aligner-item {
+  max-width: 50%;
+  padding-top: 35vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.pulse {
+  margin: 0 !important;
+  display: block;
+  /* width: 100px; */
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #f8f8f8;
+  cursor: pointer;
+  box-shadow: 0 0 0 #e9e9e9;
+  animation: pulse 5s infinite;
+}
+/* .pulse:hover {
+  animation: none;
+} */
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 #e9e9e969;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: scale(1.1);
+    transform: skew(-2deg);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 100px #e9e9e900;
+  }
+}
+h2 {
+  padding-top: 85px;
+  font-size: 28px;
+  text-align: center;
+  color: #96deda;
+  font-family: 'Oswald', sans-serif !important;
+}
+.noSpace {
+  padding-top: 0;
+}
+b {
+  font-size: 30px;
+}
+.red {
+  padding-top: 75px;
+  color: #fa8e63;
+}
+.column,
+.columns {
+  margin-left: 0;
+}
+.six {
+  width: 50% !important;
+}
+.bloky {
+  display: block;
+}
+.redy {
+  color: #fd746c;
+}
+.offline {
+  height: 100vh;
+  /* width: 50%; */
+  background: #4ecdc4; /* fallback for old browsers */
+  background: #2c3e50; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #fd746c,
+    #2c3e50
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #fd746c, #dd8783);
+}
+@media only screen and (max-width: 600px) {
+  .six {
+    width: 100% !important;
   }
 }
