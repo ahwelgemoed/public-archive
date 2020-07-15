@@ -1,7 +1,7 @@
-import { ExampleComponent } from '.'
+import { WrappedDiv } from '.'
 
-describe('ExampleComponent', () => {
+describe('WrappedDiv', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(WrappedDiv).toBeTruthy()
   })
 })
