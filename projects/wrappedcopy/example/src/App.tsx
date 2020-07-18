@@ -1,16 +1,26 @@
 import React from 'react'
 
-import { WrappedDiv } from 'wrappedcopy'
-import 'wrappedcopy/dist/index.css'
-
+import {
+  WrappedElement,
+  WrappedCopyContextProvider,
+  useCopiedContext
+} from 'wrappedcopy'
 const App = () => {
   return (
-    <div>
-      <WrappedDiv>
-        <>Click Me && Ill Be Copied</>
-      </WrappedDiv>
-    </div>
+    <WrappedCopyContextProvider>
+      <MyComponent />
+    </WrappedCopyContextProvider>
   )
 }
 
 export default App
+
+const MyComponent = () => {
+  const x = useCopiedContext()
+  console.log('x', x)
+  return (
+    <div>
+      <WrappedElement>Hello</WrappedElement>
+    </div>
+  )
+}
