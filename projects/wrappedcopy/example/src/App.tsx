@@ -16,8 +16,9 @@ const App = () => {
 export default App
 
 const MyComponent = () => {
-  const x = useCopiedContext()
-  console.log('x', x)
+  const context = useCopiedContext()
+  console.log(context)
+
   return (
     <div>
       <WrappedElement>Hello</WrappedElement>
