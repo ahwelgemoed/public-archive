@@ -1,0 +1,22 @@
+{
+  "name": "@cloud/common",
+  "version": "0.1.0",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "postinstall": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json",
+    "watch": "tsc -p tsconfig.json --watch"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.46",
+    "@types/react-dom": "^16.9.8",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "typescript": "^3.9.7"
+  },
+  "license": "ISC"
+}
