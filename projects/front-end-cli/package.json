@@ -4,11 +4,16 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "setup:env": "node src/index.js --env"
+    "setup:env": "node src/index.js --env",
+    "setup:android": "node src/index.js --android",
+    "setup:ios": "node src/index.js --ios"
   },
   "dependencies": {
+    "@expo/spawn-async": "^1.5.0",
     "dotenv-stringify": "^2.0.3",
     "inquirer": "^7.3.3",
+    "ora": "^5.1.0",
+    "progress": "^2.0.3",
     "yargs": "^16.0.3"
   }
 }
