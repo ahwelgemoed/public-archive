@@ -2,9 +2,9 @@
 
 ## What It can/should Do
 
-This is made to try an simplify Project Setup for Mac Users running Mendix Studio Pro in Parallels, among other things
+This is made to try and simplify Project Setup for Mac Users running Mendix Studio Pro with Parallels, among other things, it also attempts to help with local dev work by running app in simulators on the Developers device.
 
-### It can:
+### It can
 
 -`yarn setup:env || npm run setup:env` Generate in `.env` file to link your widget created with `yo` on your mac to your mendix app on your Windows C drive.
 [Mac Only]
