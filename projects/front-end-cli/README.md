@@ -43,17 +43,18 @@ We try to make it as easy as possible this does require that you setup your dev 
 
   Add the following lines to your `$HOME/.bash_profile` or `$HOME/.bashrc` (if you are using zsh then `~/.zprofile` or `~/.zshrc`) config file
 
-  ```export ANDROID_HOME=$HOME/Library/Android/sdk
-  export PATH=$PATH:$ANDROID_HOME/emulator
-  export PATH=$PATH:$ANDROID_HOME/tools
-  export PATH=$PATH:$ANDROID_HOME/tools/bin
-  export PATH=$PATH:$ANDROID_HOME/platform-tools
+  ```
+  export PATH=$HOME/bin:/usr/local/bin:$PATH
+  export PATH="${HOME}/Library/Android/sdk/tools:${HOME}/Library/Android/sdk/pl$
+  export ANDROID_SDK=$HOME/Library/Android/sdk
+  export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$PATH
+  export PATH=$PATH:~/Library/Android/sdk/platform-tools/
   ```
 
   This should work if you did not change the path to the SDK
 
   _Restart_ your terminal and run `adb` if it returns a long list you are fine if not...
-  </details>
+    </details>
 
 ## Setup XCode on [Mac]
 
