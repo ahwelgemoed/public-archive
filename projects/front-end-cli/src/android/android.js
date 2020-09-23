@@ -1,15 +1,3 @@
-//  cd ~/Library/Android/sdk/emulator
-//./emulator -list-avds
-// list out names Promoped user input
-// Pixel_3a_API_30_x86
-
-// emulator -avd avd_name
-
-// ADD ANDROID TO PATH !!!
-
-// adb devices // list booted devices
-// adb shell
-
 const path = require("path");
 const { exec } = require("child_process");
 const spawnAsync = require("@expo/spawn-async");
@@ -102,3 +90,15 @@ module.exports = {
 // adb shell pm list packages
 
 // adb shell monkey -p com.mendix.developerapp.min88 -v 1
+
+//  cd ~/Library/Android/sdk/emulator
+//./emulator -list-avds
+// list out names Promoped user input
+// Pixel_3a_API_30_x86
+
+// emulator -avd avd_name
+
+// ADD ANDROID TO PATH !!!
+
+// adb devices // list booted devices
+// adb shell

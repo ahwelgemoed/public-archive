@@ -6,7 +6,8 @@
   "scripts": {
     "setup:env": "node src/index.js --env",
     "setup:android": "node src/index.js --android",
-    "setup:ios": "node src/index.js --ios"
+    "setup:ios": "node src/index.js --ios",
+    "setup": "node src/index.js"
   },
   "dependencies": {
     "@expo/spawn-async": "^1.5.0",

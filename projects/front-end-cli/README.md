@@ -1,5 +1,74 @@
-# front-end-cli
+# Front-End-CLI
 
-Very Dirty CLI TO Create .ENV / Start Android Sim and Install App / Start ios Sim and install .app
+## What It can/should Do
 
-(ToDo) - Almost Everything
+This is made to try an simplify Project Setup for Mac Users running Mendix Studio Pro in Parallels, among other things
+
+### It can:
+
+-`yarn setup:env || npm run setup:env` Generate in `.env` file to link your widget created with `yo` on your mac to your mendix app on your Windows C drive.
+[Mac Only]
+
+-`yarn setup:android || npm run setup:android` Startup, Open and Install the Mendix Dev App in Android Studio [Mac and Windows]
+
+-`yarn setup:ios || npm run setup:ios` Startup, Open and Install the Mendix Dev App in IOS Simulator [Mac Only]
+
+_Ps. Just run `yarn setup || npm run setup` and You will be prompted on what you can do._
+
+We try to make it as easy as possible this does require that you setup your dev environment correctly.
+
+## Setup Android Studio on [Mac]
+
+<details>
+  <summary>Open Setup Steps</summary>
+- Download and Install following the recommended React Native Setup that can be found here
+
+[React Native Setup](https://reactnative.dev/docs/environment-setup)
+
+#### In Short
+
+- Install Homebrew [Brew](https://brew.sh/) _(Ps. If you don't know what it is,spoiler ⏰ its great!)_
+
+- `brew install node && brew install watchman`
+
+- `brew cask install adoptopenjdk/openjdk/adoptopenjdk8`
+
+- Download Android Studio (https://developer.android.com/studio/index.html)
+
+  - Android SDK
+  - Android SDK Platform
+  - Android Virtual Device
+
+  **This is the most important part and ensure you get it right**
+
+  Add the following lines to your `$HOME/.bash_profile` or `$HOME/.bashrc` (if you are using zsh then `~/.zprofile` or `~/.zshrc`) config file
+
+  ```export ANDROID_HOME=$HOME/Library/Android/sdk
+  export PATH=$PATH:$ANDROID_HOME/emulator
+  export PATH=$PATH:$ANDROID_HOME/tools
+  export PATH=$PATH:$ANDROID_HOME/tools/bin
+  export PATH=$PATH:$ANDROID_HOME/platform-tools
+  ```
+
+  This should work if you did not change the path to the SDK
+
+  _Restart_ your terminal and run `adb` if it returns a long list you are fine if not...
+  </details>
+
+## Setup XCode on [Mac]
+
+<details>
+  <summary>Open Setup Steps</summary>
+
+[React Native Setup](https://reactnative.dev/docs/environment-setup)
+
+</details>
+
+## Setup Android Studio on [Windows]
+
+<details>
+  <summary>Open Setup Steps</summary>
+
+[React Native Setup](https://reactnative.dev/docs/environment-setup)
+
+  </details>
