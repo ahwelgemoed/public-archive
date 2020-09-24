@@ -55,7 +55,7 @@ export const transformStringToJsonConfig = (mermaidSettings: string | undefined)
         try {
             return JSON.parse(mermaidSettings);
         } catch (error) {
-            console.error(`Invalid Mermaid styles, ${error.message}`);
+            console.error(`Invalid Mermaid Config, ${error.message}`);
         }
     }
 };

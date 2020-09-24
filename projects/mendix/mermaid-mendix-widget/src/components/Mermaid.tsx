@@ -17,7 +17,7 @@ const Mermaid: FunctionComponent<MermaidComponentProps> = ({
     directDownload,
     generateButtonStyles
 }) => {
-    const inputEl = useRef<any>(null); // TODO 🐛 if HTMLDivElement
+    const inputEl = useRef<any>(null); // @TODO 🐛 if HTMLDivElement
     useEffect(() => {
         mermaid.initialize({
             ...DEFAULT_CONFIG,
@@ -26,12 +26,12 @@ const Mermaid: FunctionComponent<MermaidComponentProps> = ({
         });
     }, []);
 
+    /**
+     * If the data-processed tag is left on the div and the user edits the Graph it wont update
+     * Thus we remove the attribute every time the markdownBody Prop (Coming From Mendix) is changed
+     * The re-render will add it back
+     */
     useEffect(() => {
-        /**
-         *  If the data-processed tag is left on and the user edits the Graph it wont update
-         * Thus we remove the attribute every time the markdownBody Prop (Coming From Mendix)
-         * The re-render will add it back
-         */
         if (markdownBody) {
             inputEl.current.removeAttribute("data-processed");
             mermaid.contentLoaded();
