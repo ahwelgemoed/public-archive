@@ -1,8 +1,14 @@
 {
-  "name": "mendix-fe-cli",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "arno-front-cli",
+  "version": "0.0.1",
+  "description": "A Test Proj",
+  "main": "src/index.js",
+  "bin": "src/index.js",
   "license": "MIT",
+  "author": "AH Welgemoed",
+  "keywords": [
+    "arno"
+  ],
   "scripts": {
     "setup:env": "node src/index.js --env",
     "setup:android": "node src/index.js --android",
@@ -16,5 +22,13 @@
     "ora": "^5.1.0",
     "progress": "^2.0.3",
     "yargs": "^16.0.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahwelgemoed/front-end-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ahwelgemoed/front-end-cli/issues"
+  },
+  "homepage": "https://github.com/ahwelgemoed/front-end-cli#readme"
 }
