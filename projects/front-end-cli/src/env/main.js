@@ -1,7 +1,7 @@
 const { writeFile } = require("fs").promises;
 const inquirer = require("inquirer");
 const stringify = require("dotenv-stringify");
-const { envConfigs } = require("../configs/env");
+const { envConfigs } = require("./envConfig");
 
 const mainEnvProcess = async () => {
   const { env } = await inquirer.prompt([

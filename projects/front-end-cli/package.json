@@ -10,10 +10,10 @@
     "arno"
   ],
   "scripts": {
-    "setup:env": "node src/index.js --env",
-    "setup:android": "node src/index.js --android",
-    "setup:ios": "node src/index.js --ios",
-    "setup": "node src/index.js"
+    "start:env": "node src/index.js --env",
+    "start:android": "node src/index.js --android",
+    "start:ios": "node src/index.js --ios",
+    "start": "node src/index.js"
   },
   "dependencies": {
     "@expo/spawn-async": "^1.5.0",
