@@ -6,50 +6,46 @@
     <description>A Mendix Widget Implementation for Mermaid</description>
     <icon/>
     <properties>
-        <propertyGroup caption="General">
-            <propertyGroup caption="Data source">
-                <property key="textAttribute" type="attribute">
-                    <caption>Attribute (path)</caption>
-                    <description/>
-                    <attributeTypes>
-                        <attributeType name="String"/>
-                    </attributeTypes>
-                </property>
-            </propertyGroup>
-            <propertyGroup caption="Appearance">
-                <property key="showGenerateButton" type="boolean" defaultValue="false">
-                    <caption>Show Generate Button</caption>
-                    <description>Should the user be shown a button to generate a BASE64 SVG Image. (Will prompt a download by default)</description>
-                </property>
-                <property key="directDownload" type="boolean" defaultValue="false">
-                    <caption>Prompt Download Directly</caption>
-                    <description>Should the image be directly downloaded (If false the user will be shown a separate generate and download buttons and a Input Box with the Base64 String in it)</description>
-                </property>
-                <property key="generateButtonStyles" type="string" required="false" defaultValue="" multiline="false">
-                    <caption>Generate Button Class</caption>
-                    <description>class names for buttons</description>
-                </property>
-                <property key="generateInputStyles" type="string" required="false" defaultValue="" multiline="false">
-                    <caption>Generate Input Class</caption>
-                    <description>class names for input</description>
-                </property>
-
-                <property key="theme" type="enumeration" defaultValue="default">
-                    <caption>Mermaid Config </caption>
-                    <description>Choose a theme for you chart</description>
-                    <enumerationValues>
-                        <enumerationValue key="default">Default</enumerationValue>
-                        <enumerationValue key="forest">Forest</enumerationValue>
-                        <enumerationValue key="dark">Dark</enumerationValue>
-                        <enumerationValue key="neutral">Neutral</enumerationValue>
-                    </enumerationValues>
-                </property>
-                <property key="mermaidSettings" type="string" multiline="true" required="false">
-                    <caption>Mermaid Config Settings</caption>
-                    <description>JSON array with Mermaid Config (MORE INFO ON MERMADEJS DOCS)</description>
-                </property>
-            </propertyGroup>
+        <propertyGroup caption="Data source">
+            <property key="textAttribute" type="attribute">
+                <caption>Attribute (path)</caption>
+                <description/>
+                <attributeTypes>
+                    <attributeType name="String"/>
+                </attributeTypes>
+            </property>
+        </propertyGroup>
+        <propertyGroup caption="Appearance">
+            <property key="showGenerateButton" type="boolean" defaultValue="false">
+                <caption>Show Generate Button</caption>
+                <description>Should the user be shown a button to generate a BASE64 SVG Image. (Will prompt a download by default)</description>
+            </property>
+            <property key="directDownload" type="boolean" defaultValue="false">
+                <caption>Prompt Download Directly</caption>
+                <description>Should the image be directly downloaded (If false the user will be shown a separate generate and download buttons and a Input Box with the Base64 String in it)</description>
+            </property>
+            <property key="generateButtonStyles" type="string" required="false" defaultValue="" multiline="false">
+                <caption>Generate Button Class</caption>
+                <description>class names for buttons</description>
+            </property>
+            <property key="generateInputStyles" type="string" required="false" defaultValue="" multiline="false">
+                <caption>Generate Input Class</caption>
+                <description>class names for input</description>
+            </property>
+            <property key="theme" type="enumeration" defaultValue="default">
+                <caption>Mermaid Config </caption>
+                <description>Choose a theme for you chart (You can override this with the JSON Object)</description>
+                <enumerationValues>
+                    <enumerationValue key="default">Default</enumerationValue>
+                    <enumerationValue key="forest">Forest</enumerationValue>
+                    <enumerationValue key="dark">Dark</enumerationValue>
+                    <enumerationValue key="neutral">Neutral</enumerationValue>
+                </enumerationValues>
+            </property>
+            <property key="mermaidSettings" type="string" multiline="true" required="false">
+                <caption>Mermaid Config Settings</caption>
+                <description>JSON array with Mermaid Config (MORE INFO ON MERMADEJS DOCS)</description>
+            </property>
         </propertyGroup>
     </properties>
-
 </widget>

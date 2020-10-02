@@ -3,21 +3,30 @@ import Mermaid from "./components/Mermaid";
 
 import { MermaidWidgetContainerProps } from "../typings/MermaidWidgetProps";
 
-import "./ui/MermaidWidget.css";
-
 export default class MermaidWidget extends Component<MermaidWidgetContainerProps> {
     render(): ReactNode {
+        const {
+            theme,
+            style,
+            directDownload,
+            mermaidSettings,
+            showGenerateButton,
+            generateInputStyles,
+            generateButtonStyles,
+            textAttribute
+        } = this.props;
+
         return (
             <Mermaid
-                theme={this.props.theme}
-                style={this.props.style}
+                theme={theme}
+                style={style}
                 className={this.props.class}
-                directDownload={this.props.directDownload}
-                mermaidSettings={this.props.mermaidSettings}
-                markdownBody={this.props.textAttribute?.value}
-                showGenerateButton={this.props.showGenerateButton}
-                generateInputStyles={this.props.generateInputStyles}
-                generateButtonStyles={this.props.generateButtonStyles}
+                directDownload={directDownload}
+                mermaidSettings={mermaidSettings}
+                markdownBody={textAttribute?.value}
+                showGenerateButton={showGenerateButton}
+                generateInputStyles={generateInputStyles}
+                generateButtonStyles={generateButtonStyles}
             />
         );
     }

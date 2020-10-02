@@ -1,6 +1,8 @@
-export const DEFAULT_CONFIG = {
+import { MermaidDefaultConfig } from "../interfaces/index";
+
+export const DEFAULT_CONFIG: MermaidDefaultConfig = {
     theme: "default",
-    logLevel: "fatal",
+    logLevel: 1,
     securityLevel: "strict",
     startOnLoad: true,
     arrowMarkerAbsolute: false,
@@ -16,7 +18,6 @@ export const DEFAULT_CONFIG = {
         useMaxWidth: true
     },
     flowchart: {
-        diagramPadding: 8,
         htmlLabels: true,
         curve: "linear"
     },
@@ -30,12 +31,9 @@ export const DEFAULT_CONFIG = {
         boxTextMargin: 5,
         noteMargin: 10,
         messageMargin: 35,
-        messageAlign: "center",
         mirrorActors: true,
         bottomMarginAdj: 1,
-        useMaxWidth: true,
-        rightAngles: false,
-        showSequenceNumbers: false
+        useMaxWidth: true
     },
     gantt: {
         titleTopMargin: 25,
