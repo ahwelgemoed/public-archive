@@ -1,9 +1,32 @@
-## Mermaid-Widget
+<h1 align="center">Mermaid Viewer fro Mendix</h1>
+
+<p align="center">
+  <a href="">
+    <img alt="License: MIT" src="https://img.shields.io/github/issues/ahwelgemoed/mermaid-mendix-widget" target="_blank" />
+  </a>
+  <a href="">
+    <img alt="GitHub issues" src="https://img.shields.io/github/release/ahwelgemoed/mermaid-mendix-widget" target="_blank" />
+  </a>
+  <a href="https://appstore.home.mendix.com/link/modeler/">
+    <img alt="GitHub issues" src="https://img.shields.io/badge/Studio%20version-8.0%2B-blue.svg" target="_blank" />
+  </a>
+  <a href="https://docs.mendix.com/developerportal/app-store/app-store-content-support">
+    <img alt="GitHub issues" src="https://img.shields.io/badge/Support-Community%20(no%20active%20support)-orange.svg" target="_blank" />
+  </a>
+  <a href="/LICENSE">
+    <img alt="License: MIT" src="https://img.shields.io/badge/license-Apache%202.0-orange.svg" target="_blank" />
+  </a>
+  <br>
+  
+</p>
+
 
 A Wrapper for Mermaid to be Used In Mendix Mermaid is used to simplify documentation by drawing Graphs using a Markdown
 like syntax.
 
 Mermaid Charts are drawn using SVG, thus they can be easily converted to Base64 Images and embedded nearly anywhere.
+
+> Mermaid is a Javascript based diagramming and charting tool that uses Markdown-inspired text definitions and a renderer to create and modify complex diagrams. The main purpose of Mermaid is to help documentation catch up with development. - [Mermaid](https://github.com/mermaid-js/mermaid#readme) 
 
 ## Features
 
@@ -60,4 +83,6 @@ TODO
 
 TODO
 
-<!-- Split XML TAS OUT -->
+## License
+
+Apache 2
