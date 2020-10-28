@@ -38,7 +38,9 @@ const Mermaid: FunctionComponent<MermaidComponentProps> = ({
         }
     }, [markdownBody]);
 
-    if (!markdownBody) return null;
+    if (!markdownBody) {
+        return null;
+    }
 
     return (
         <div style={style} className={className}>

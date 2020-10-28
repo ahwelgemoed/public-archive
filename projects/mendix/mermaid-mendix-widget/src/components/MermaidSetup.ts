@@ -48,7 +48,7 @@ export const DEFAULT_CONFIG: MermaidDefaultConfig = {
     }
 };
 
-export const transformStringToJsonConfig = (mermaidSettings: string | undefined) => {
+export const transformStringToJsonConfig = (mermaidSettings: string | undefined): any => {
     if (mermaidSettings) {
         try {
             return JSON.parse(mermaidSettings);

@@ -12,7 +12,7 @@ const ExportButtons: FunctionComponent<ExportComponentProps> = ({
 }) => {
     const [inputBase64, setInputBase64] = useState<string>("");
 
-    const generateSVG = () => {
+    const generateSVG = (): void => {
         let svgGraph;
         mermaid.render("svgID", markdownBody as string, tempSvgGraph => (svgGraph = tempSvgGraph));
         if (svgGraph) {
@@ -24,7 +24,7 @@ const ExportButtons: FunctionComponent<ExportComponentProps> = ({
         }
     };
 
-    const prompUserToDownloadImg = (createdBase64Svg: string) => {
+    const prompUserToDownloadImg = (createdBase64Svg: string): void => {
         /**
          * This is to fool Browsers that User Clicked The Download button
          * Modern Browsers Prevent Indirect Downloads from Button Clicks
