@@ -1,10 +1,11 @@
 </br>
-<a href="https://github.com/mendixlabs/app-services-components">
+<a align="center" href="https://github.com/mendixlabs/app-services-components">
 <div  style="background-color:#d73a49; text-align:center">
-<span style="color:black; text-align:center" > This Repo has been moved. Click To View
+<span style="color:black;" > This Repo has been moved. Click To View
 </span>
 </div>
 </a>
+</br>
 
 <h1 align="center">Collapsible Header on Scroll (Mendix Widget)</h1>
 
