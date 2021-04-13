@@ -1,9 +1,11 @@
 </br>
+<div align="center">
 <a align="center" href="https://github.com/mendixlabs/app-services-components">
-<span>
+<span align="center">
 ⚠️ This Repo has been moved. Click To View ⚠️
 </span>
 </a>
+</div>
 </br>
 
 <h1 align="center">Collapsible Header on Scroll (Mendix Widget)</h1>
