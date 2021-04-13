@@ -1,9 +1,8 @@
 </br>
 <a align="center" href="https://github.com/mendixlabs/app-services-components">
-<div  background-color="#d73a49">
-<span style="color:black;" > This Repo has been moved. Click To View
+<span>
+⚠️ This Repo has been moved. Click To View ⚠️
 </span>
-</div>
 </a>
 </br>
 
