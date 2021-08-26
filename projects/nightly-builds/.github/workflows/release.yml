@@ -1,0 +1,33 @@
+name: release
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: "0 0 * * 1-5"
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          registry-url: https://registry.npmjs.org
+          node-version: "14.x"
+      - name: Set up to NPM
+        run: |
+          npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
+          npm config set scope "@ahwelgemoed"
+          npm config list
+        env:
+          CI: true
+          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+      - uses: ./
+        with:
+          registry-url: https://registry.npmjs.org
+          node-version: "14.x"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
