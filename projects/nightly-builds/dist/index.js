@@ -16331,13 +16331,13 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
 const packagesToPublish = [
     {
         projectPath: "piw-native-utils-internal",
-        newName: "@ahwelgemoed/diy-piw-native-utility",
-        newPath: "diy-piw-native-utility",
+        newName: "@ahwelgemoed/nightly-piw-native-utility",
+        newPath: "nightly-piw-native-utility",
     },
     {
         projectPath: "piw-utils-internal",
-        newName: "@ahwelgemoed/diy-piw-utility",
-        newPath: "diy-piw-utility",
+        newName: "@ahwelgemoed/nightly-piw-utility",
+        newPath: "nightly-piw-utility",
     },
 ];
 const PROJECT_TO_CLONE = "https://github.com/mendix/widgets-resources";
@@ -16368,8 +16368,8 @@ function run() {
                     access: "public",
                 }, repository: {
                     type: "git",
-                    url: "git://github.com/ahwelgemoed/diy.git",
-                    directory: "packages/diy-piw-utils",
+                    url: "git://github.com/ahwelgemoed/nightly-builds.git",
+                    directory: "packages/nightly-piw-utils",
                 } });
             // Write New JSON
             yield _writePackageJSON(`${PROJECT_FOLDER_PATH}/packages/tools/${packageToPublish.projectPath}/package.json`, newPackage);
