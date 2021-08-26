@@ -15,9 +15,7 @@ This Repo/Github Action runs overnight and carbon copies what is currently in th
     @ahwelgemoed/nightly-piw-native-utility
     </td>
     <td>
-    <a href=''>NPM</a>
-    <br/>
-    <a href=''>Github</a>    
+    <a href='https://www.npmjs.com/package/@ahwelgemoed/nightly-piw-native-utility'>NPM</a>
 </td>
     <td>
     <a href='https://github.com/mendix/widgets-resources/tree/master/packages/tools/piw-native-utils-internal'>piw-native-utils-internal</a>    
@@ -28,9 +26,7 @@ This Repo/Github Action runs overnight and carbon copies what is currently in th
     @ahwelgemoed/nightly-piw-utility
     </td>
     <td>
-    <a href=''>NPM</a>
-    <br/>
-    <a href=''>Github</a>  
+    <a href='https://www.npmjs.com/package/@ahwelgemoed/nightly-piw-utility'>NPM</a>
     
 </td>
     <td>

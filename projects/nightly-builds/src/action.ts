@@ -65,7 +65,7 @@ async function run() {
       repository: {
         type: "git",
         url: "git://github.com/ahwelgemoed/nightly-builds.git",
-        directory: "packages/nightly-piw-utils",
+        directory: `packages/${packageToPublish.newPath}`,
       },
     };
     // Write New JSON
