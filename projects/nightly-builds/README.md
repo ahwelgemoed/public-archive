@@ -1,5 +1,7 @@
 # Nightly Builds
 
+[![release](https://github.com/ahwelgemoed/nightly-builds/actions/workflows/release.yml/badge.svg)](https://github.com/ahwelgemoed/nightly-builds/actions/workflows/release.yml)
+
 <img width=300 src='https://media.giphy.com/media/26gJyqA2B1HZR44la/giphy.gif?cid=ecf05e47s41yna3rsst822sa0nyi7bpzz0295hz8e6si57w9&rid=giphy.gif&ct=g'>
 
 A Repo for builds of unpublished helpers and tools from Mendix's [Monorepo](https://github.com/mendix/widgets-resources)
