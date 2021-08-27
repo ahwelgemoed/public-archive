@@ -3,9 +3,7 @@ name: release
 on:
   push:
     branches:
-      - master
-  schedule:
-    - cron: "0 0 * * 1-5"
+      - main
 jobs:
   test:
     runs-on: ubuntu-latest
