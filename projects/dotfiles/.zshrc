@@ -59,7 +59,17 @@ autoload -U +X bashcompinit && bashcompinit
  
  export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
 export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
 
 
 source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# flashlight
+export PATH="/Users/arno/.flashlight/bin:$PATH"
+
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH="$PATH:/Applications/Cursor.app/Contents/Resources/app/bin"
+
+alias c="code .";
+alias cr="cursor .";

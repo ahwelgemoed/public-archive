@@ -1,4 +1,4 @@
-# Arno's dotfiles ✨💽 (Started as a fork of [Lazar's dotfiles](https://github.com/nikolovlazar/dotfiles)
+# Arno's dotfiles ✨💽 (Started as a fork of [Lazar's dotfiles](https://github.com/nikolovlazar/dotfiles))
 
 This repository contains my ever-evolving dotfiles. Check them out! If you find something useful, feel free to add it to your own dotfiles.
 
