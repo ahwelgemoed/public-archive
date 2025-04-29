@@ -16,7 +16,8 @@ export PATH=$PATH:~/android-sdks/platform-tools/
 export PATH=$PATH:~/android-sdks/tools/
 
 source $ZSH/themes/headline.zsh-theme
-
+source /Users/arno/google-cloud-sdk/path.zsh.inc
+source /Users/arno/google-cloud-sdk/completion.zsh.inc
 
 ZSH_THEME="headline"
 
@@ -75,3 +76,10 @@ alias cr="cursor .";
 export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completio
+
+# export PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"
+export PATH="$(brew --prefix)/opt/homebrew/opt/python@3.10:$PATH"
+
+alias python3="python3.10"
+
+  
