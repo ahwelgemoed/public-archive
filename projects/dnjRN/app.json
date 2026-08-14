@@ -1,0 +1,63 @@
+{
+  "expo": {
+    "name": "Dis Net Jy",
+    "slug": "klyntjidnj",
+    "privacy": "public",
+    "sdkVersion": "34.0.0",
+    "platforms": ["ios", "android", "web"],
+    "version": "2.8.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/DNJ.png",
+    "splash": {
+      "image": "./assets/images/splash-03.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#000000"
+    },
+    "web": {
+      "build": {
+        "babel": {
+          "include": [
+            "native-base",
+            "static-container",
+            "react-native-pose",
+            "react-pose-core",
+            "horizontaltextscroll",
+            "styled-components"
+          ]
+        }
+      }
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "android": {
+      "versionCode": 27,
+      "package": "com.disnetons.googlesignin",
+      "googleServicesFile": "./google-services.json"
+    },
+    "facebookScheme": "fb433863794055791",
+    "facebookAppId": "433863794055791",
+    "facebookDisplayName": "DisNetJy",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.disnetjy.ahwelgemoed",
+      "infoPlist": {
+        "UIBackgroundModes": ["audio"]
+      }
+    },
+    "description": "",
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "ahwelgemoed",
+            "project": "dis-net-jy",
+            "authToken": "0ff0ae42875f444d843d893af3ee64c1a0e56ccd8d6a41aeb6c32f5782235ef7"
+          }
+        }
+      ]
+    }
+  }
+}
