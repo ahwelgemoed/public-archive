@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "mtonode": "mtonode",
+    "default": "mtonode"
+  }
+}
