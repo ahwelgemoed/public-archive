@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>Dis Net Jy</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleGetInfoString</key>
+	<string>LSApplicationQueriesSchemes</string>
+	<key>CFBundleIconFile</key>
+	<string></string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1.7.2</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array/>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>localhost</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Dis Net Jy would like to use Music</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>This will allow you to use your bluetooth to play music</string>
+	<key>NSBluetoothPeripheralUsageDescription </key>
+	<string>Dis Net Jy would like to acces Bluetooth to Connect</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>This will allow you to let us add calendar</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Dis Net Jy</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Dis Net Jy would like to use Location</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Dis Net Jy would like to use Location</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Dis Net Jy would like to use Location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Dis Net Jy would like to use Location</string>
+	<key>NSMainNibFile</key>
+	<string>LaunchScreen</string>
+	<key>NSMotionUsageDescription</key>
+	<string>Dis Net Jy would like to detect Motion</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Dis Net Jy would like to save a poem</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Dis Net Jy would like to save a poem</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Dis Net Jy would like to use Speach</string>
+	<key>NSSpeechRecognitionUsageDescription </key>
+	<string>Dis Net Jy would like to use Speach</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Entypo.ttf</string>
+		<string>EvilIcons.ttf</string>
+		<string>Feather.ttf</string>
+		<string>FontAwesome.ttf</string>
+		<string>Foundation.ttf</string>
+		<string>Ionicons.ttf</string>
+		<string>MaterialCommunityIcons.ttf</string>
+		<string>MaterialIcons.ttf</string>
+		<string>Octicons.ttf</string>
+		<string>Roboto_medium.ttf</string>
+		<string>Roboto.ttf</string>
+		<string>rubicon-icon-font.ttf</string>
+		<string>SimpleLineIcons.ttf</string>
+		<string>Zocial.ttf</string>
+		<string>Lora-Regular.ttf</string>
+		<string>Lora Bold.ttf</string>
+		<string>Lora Regular.ttf</string>
+		<string>Montserrat SemiBold.ttf</string>
+		<string>Montserrat-SemiBold.ttf</string>
+		<string>Lato-Light.ttf</string>
+		<string>Proxima Nova Alt Regular-webfont.ttf</string>
+		<string>AntDesign.ttf</string>
+		<string>FontAwesome5_Brands.ttf</string>
+		<string>FontAwesome5_Regular.ttf</string>
+		<string>FontAwesome5_Solid.ttf</string>
+		<string>Streamster.ttf</string>
+	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UIRequiresFullScreen</key>
+	<true/>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+</dict>
+</plist>
