@@ -1,0 +1,214 @@
+.navContainer {
+  display: flex;
+  background: #121212;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+.menuItem {
+  order: 1;
+  margin-top: 10px;
+  margin-left: 10px;
+  a {
+    color: #999;
+    font-size: 1.2rem;
+    font-family: 'TechnaSans-Regular';
+    font-weight: 400;
+  }
+}
+.menuFooterItem {
+  height: 5vh;
+  order: 6;
+  padding-left: 10px;
+  padding-top: 1vh;
+  align-self: flex-end;
+  background: #efefef;
+  a {
+    color: #121212;
+    font-size: 1.4rem;
+    font-family: 'TechnaSans-Regular';
+    font-weight: 400;
+  }
+}
+.drawerClose {
+  display: flex;
+  justify-content: space-around;
+  height: 10vh;
+  background: #121212;
+  color: white;
+  font-family: 'TechnaSans-Regular';
+  align-items: center;
+}
+.drawer-mask {
+  background: #999 !important;
+}
+.drawerButtonRight {
+  cursor: pointer;
+  padding: 10px;
+  transition: all 200ms ease-in-out;
+  font-family: 'TechnaSans-Regular';
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  border-bottom: 1px solid #121212;
+  border-radius: 2px;
+  &:hover {
+    border-bottom: 1px solid #fff;
+  }
+}
+.drawerButtonLeft {
+  cursor: pointer;
+  padding: 10px;
+  transition: all 200ms ease-in-out;
+  font-family: 'TechnaSans-Regular';
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  border-bottom: 1px solid #121212;
+  border-radius: 2px;
+  &:hover {
+    border-bottom: 1px solid #fff;
+  }
+}
+.mainBackground {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #121212;
+  align-items: center;
+}
+.mainBackgroundPages {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #121212;
+  align-items: center;
+}
+.mainTitle {
+  font-family: 'TechnaSans-Regular';
+  color: #fff;
+  font-weight: 700;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+.subTitle {
+  font-family: 'EnvyCodeR';
+  margin-top: 10px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #999;
+}
+.subTitleCode {
+  font-family: 'EnvyCodeR';
+  margin-top: 10px;
+  font-weight: 300;
+  color: rgb(104, 104, 104);
+}
+.appDesc {
+  font-family: 'EnvyCodeR';
+  color: #fff;
+  font-weight: 300;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-align: justify;
+  a {
+    text-decoration: none;
+    font-family: 'EnvyCodeR';
+    color: #999;
+    font-size: 1.2rem;
+  }
+}
+.techHolder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 60vw;
+}
+
+.techRight {
+  text-align: right;
+  font-family: 'TechnaSans-Regular';
+  color: #999;
+  font-size: 1.2rem;
+  min-height: 70vh;
+  h4 {
+    align-self: flex-start;
+  }
+}
+.techLeft {
+  width: 50vw;
+  color: #999;
+  font-weight: 900;
+  font-size: 2rem;
+}
+.links {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 5vh;
+
+  a {
+    text-decoration: none;
+    font-family: 'EnvyCodeR';
+    color: #999;
+    font-size: 1.2rem;
+  }
+}
+.fade-enter {
+  background: #121212;
+  transform: scale(0.5);
+  z-index: 1;
+}
+.fade-enter.fade-enter-active {
+  transform: scale(1);
+  transition: all 550ms ease-in-out;
+}
+.image-gallery-slide {
+  img {
+    background: #121212;
+  }
+}
+.image-gallery {
+  width: 60vw;
+  padding-bottom: 15vh;
+}
+.mainImg {
+  height: 60vh;
+  max-width: 100%;
+}
+.homeLinks {
+  a {
+    text-decoration: none;
+    font-family: 'EnvyCodeR';
+    color: #999;
+    font-size: 1.2rem;
+    margin: 10px;
+  }
+}
+
+$breakpoint-tablet: 768px;
+@media (max-width: $breakpoint-tablet) {
+  .drawer-content-wrapper {
+    width: 80vw !important;
+  }
+  .mainTitle {
+    text-align: center;
+  }
+  .subTitle {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  .mainImg {
+    height: initial;
+  }
+  .techHolder {
+    flex-direction: column;
+    width: initial;
+    .techLeft {
+      width: 80vw;
+    }
+    .techRight {
+      width: 80vw;
+      text-align: left;
+    }
+  }
+}
