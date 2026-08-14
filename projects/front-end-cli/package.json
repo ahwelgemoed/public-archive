@@ -1,0 +1,34 @@
+{
+  "name": "arno-front-cli",
+  "version": "0.0.2",
+  "description": "A Test Proj",
+  "main": "src/index.js",
+  "bin": "src/index.js",
+  "license": "MIT",
+  "author": "AH Welgemoed",
+  "keywords": [
+    "arno"
+  ],
+  "scripts": {
+    "start:env": "node src/index.js --env",
+    "start:android": "node src/index.js --android",
+    "start:ios": "node src/index.js --ios",
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "@expo/spawn-async": "^1.5.0",
+    "dotenv-stringify": "^2.0.3",
+    "inquirer": "^7.3.3",
+    "ora": "^5.1.0",
+    "progress": "^2.0.3",
+    "yargs": "^16.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahwelgemoed/front-end-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ahwelgemoed/front-end-cli/issues"
+  },
+  "homepage": "https://github.com/ahwelgemoed/front-end-cli#readme"
+}
