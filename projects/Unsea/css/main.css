@@ -1,0 +1,653 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body {
+    background: black;
+    margin: 0 auto;
+
+}
+.bgimg{
+    background-image: url("../img/bg2.jpg");
+    background-size: cover;
+}
+
+video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#redbox1 {
+    display: none;
+    background: #d12429;
+    opacity: 0.9;
+    z-index: 50;
+    margin: 0 auto;
+    margin-top: 10%;
+    padding: 5px;
+    width: 60%;
+}
+
+#redbox2 {
+    display: none;
+    background: #d12429;
+    opacity: 0.9;
+    z-index: 50;
+    margin: 0 auto;
+    margin-top: 2%;
+    padding: 5px;
+    width: 90%;
+}
+
+#redbox3 {
+    display: none;
+    background: #d12429;
+    opacity: 0.9;
+    z-index: 50;
+    margin: 0 auto;
+    margin-top: 2%;
+    padding: 5px;
+    width: 70%;
+}
+
+#redbox4 {
+    display: none;
+    background: #d12429;
+    opacity: 0.9;
+    z-index: 50;
+    margin: 0 auto;
+    margin-top: 2%;
+    padding: 5px;
+    width: 80%;
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    line-height: 1.3;
+    font-size: 2.5em;
+    display: none;
+    text-align: center;
+    color: white;
+    z-index: 100;
+    font-weight: 600;
+}
+
+.dogicon {
+    position: absolute;
+    height: 10%;
+    width: 10%;
+    right: 5%;
+    bottom: 5%;
+    display: none;
+}
+
+.dogan {
+    display: inline;
+    animation: dog 3s ease;
+}
+
+@keyframes dog {
+    0% {
+        opacity: 0;
+        bottom: 0%
+    }
+    100% {
+        opacity: 0.8;
+        bottom: 5%
+    }
+}
+
+.mapwrapper {
+    /* position: relative; */
+    width: 100%;
+    padding-bottom: 75%;
+}
+
+mark {
+    color: #d12429;
+    background: none;
+    font-weight: 600
+}
+
+.viewer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    flex: 1;
+    background: black;
+}
+
+.viewers {
+    background-image: url("../img/bg4.jpg");
+}
+
+.viewertext {
+    color: white;
+    font-size: 2em;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 10%;
+    line-height: 2;
+}
+
+.unsea {
+    color: black;
+    background: none;
+    font-weight: 600;
+    transition: all 2s;
+}
+
+.next {
+    font-family: 'Oswald', sans-serif;
+    background-color: #d12429;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: 2px solid #d12429;
+    transition: all 1s;
+    display: none;
+    width: 10%;
+    margin: 0 auto;
+}
+
+.next:hover {
+    background: rgba(0, 0, 0, 0);
+    border: 2px solid #d12429;
+    transition: all 2s;
+    color: #d12429;
+}
+
+.good {
+    color: white;
+    font-size: 1.5em;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 10%;
+    display: none;
+    line-height: 1.5;
+    transition: all 2s;
+    padding: 20px;
+    font-weight: 200
+}
+
+.browsergif {
+    width: 600px;
+    margin: 0 auto;
+    transition: all 2s;
+}
+
+.off1,
+.off2,
+.off3 {
+    display: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    padding-top: 20%;
+
+}
+
+#lineup {
+    width: 150px;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+#rules {
+    width: 180px;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+#book {
+    width: 150px;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.lineup {
+    display: initial;
+}
+
+.rules {
+    display: initial;
+}
+
+.book {
+    display: initial;
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    border-bottom: 10px red solid;
+}
+
+
+/* Modal Content */
+
+h2 {
+    font-size: 2em;
+    font-family: 'Oswald', sans-serif;
+}
+.h3 {
+    font-size: 2em;
+    font-family: 'Oswald', sans-serif;
+    color: #d12429;
+}
+
+.modal-content {
+    position: relative;
+    color: white;
+    background: rgba(0, 0, 0, 0.8);
+    margin: auto;
+    padding: 5px;
+    width: 90%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    border: none;
+}
+
+
+/* Add Animation */
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+
+/* The Close Button */
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.closes {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.closes:hover,
+.closes:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#closess {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#closess:hover,
+#closess:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 5px 16px;
+    background-color: #d12429;
+    color: white;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+.modal-footer {
+    margin-top: 10px;
+    padding: 2px 16px;
+    background-color: #d12429;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+}
+
+.headline {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.5em;
+    line-height: 1.3;
+}
+
+.yellow {
+    color: #F1E17E;
+    font-weight: 200;
+}
+
+.secondline {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2em;
+    line-height: 1.3;
+    font-weight: 200;
+}
+
+.yellows {
+    font-weight: 600;
+    color: #d12429;
+}
+
+.thirdline {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5em;
+    line-height: 1.3;
+}
+
+ul {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5em;
+    line-height: 1.3;
+}
+
+.yellowss {
+    color: #F1E17E;
+    font-weight: 200;
+}
+
+h3 {
+    font-family: 'Josefin Slab', serif;
+    font-weight: 100i;
+    font-size: 10px;
+    color: #d12429;
+}
+
+
+/* adds scroll to .modal */
+
+.modal-body {
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+}
+
+
+/* Hides Scroll Bar but keeps scroll ability. */
+
+.modal-body::-webkit-scrollbar {
+    display: none;
+}
+
+li {
+    list-style-image: url('img/dogicon.png');
+    font-family: 'Oswald', sans-serif;
+    line-height: 1.5em;
+}
+
+form {
+    font-family: 'Oswald', sans-serif;
+    width: 80%;
+    margin: 0 auto;
+    color: #F1E17E;
+    text-align: center;
+}
+
+input {
+    width: 60%;
+    margin: 0 auto;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1em;
+    background: #5C5C5C;
+    color: #F1E17E;
+    border: none;
+}
+
+select {
+    background: #5C5C5C;
+    color: #F1E17E;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1em;
+    width: 60%;
+    margin: 0 auto;
+    border: none;
+}
+
+.bookings {
+    font-size: 1.5em;
+}
+
+textarea {
+    background: #5C5C5C;
+    color: #F1E17E;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1em;
+    width: 60%;
+    margin: 0 auto;
+    border: none;
+}
+
+.send {
+    font-family: 'Oswald', sans-serif;
+    background-color: #d12429;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: 2px solid #D12328;
+    transition: all 1s;
+    width: 10%;
+    margin: 0 auto;
+}
+
+.send:hover {
+    background: black;
+    border: 2px solid #d12429;
+    transition: all 2s;
+    color: #d12429;
+}
