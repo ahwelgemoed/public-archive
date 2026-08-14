@@ -1,0 +1,15 @@
+name: "Nightly widget builds"
+description: "Action to Pull some packages https://github.com/mendix/widgets-resources from and build them nightly"
+author: "Arno Welgemoed"
+
+inputs:
+  GITHUB_TOKEN:
+    description: "GitHub token"
+    required: true
+  NPM_AUTH_TOKEN:
+    description: "NPM_AUTH_TOKEN token"
+    required: true
+
+runs:
+  using: "node12"
+  main: "dist/index.js"
